@@ -1,0 +1,29 @@
+body {
+    font-family: $roboto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: $oswald;
+    span.small {
+        font-family: $roboto;
+        font-size: .5em;
+        color: #aaa;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+h1 { font-size: 2.25em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.2em; }
+
+.ayrac {
+    height: 12px;
+    margin: 24px;
+    background: url(../images/ayrac.png) center no-repeat;
+}

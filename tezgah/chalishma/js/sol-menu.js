@@ -1,8 +1,14 @@
 "use strict";
 (function($) {
     var bl_menu = {
+        menuBtn: $('.menu-buton'),
         width: 320,
-        init: function(el) {
+        init: function(el, param) {
+            if(param) {
+                if(param.menuBtn) bl_menu.menuBtn = $(param.menuBtn);
+                if(param.width) bl_menu.width = param.width;
+            }
+
             /* Tüm Body içeriğini taşımak için bir layer yarat */
             $('body').wrapInner('<div class="sol-menu-body-wrapper"></div>');
 
@@ -14,22 +20,40 @@
             ** layer yarat. Aynı zamanda tıklanıldığında menuyu kapatacak */
             $('body').append('<div class="sol-menu-body-cover"></div>');
 
-            $('.sol-menu-body-wrapper').click(bl_menu.toggleMenu);
+            bl_menu.cover = $('.sol-menu-body-cover');
+            bl_menu.menu = $('.sol-menu-menu-wrapper');
+            bl_menu.body = $('.sol-menu-body-wrapper');
+
+            bl_menu.cover.click(bl_menu.toggle);
+            bl_menu.menuBtn.click(bl_menu.toggle);
         },
-        toggleMenu: function() {
-            $('.sol-menu-menu-wrapper').toggleClass('aktif');
+        toggle: function() {
+            bl_menu.menu.toggleClass('aktif');
+            setCover();
         },
-        openMenu: function() {
-            $('.sol-menu-menu-wrapper').addClass('aktif');
+        open: function() {
+            bl_menu.menu.addClass('aktif');
+            setCover();
         },
-        closeMenu: function() {
-            $('.sol-menu-menu-wrapper').removeClass('aktif');
+        close: function() {
+            bl_menu.menu.removeClass('aktif');
+            setCover();
+        }
+    }
+
+    function setCover() {
+        if(bl_menu.menu.hasClass('aktif')) {
+            bl_menu.cover.addClass('aktif');
+            bl_menu.body.addClass('aktif');
+        } else {
+            bl_menu.cover.removeClass('aktif');
+            bl_menu.body.removeClass('aktif');
         }
     }
 
 	/* Plug-in Start */
 	$.fn.solMenu = function(parameters) {
-        bl_menu.init(this);
+        bl_menu.init(this, parameters);
 	}
 	/* End: Plug-in Start */
 })(jQuery);
