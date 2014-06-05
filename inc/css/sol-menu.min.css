@@ -1,1 +1,1 @@
-.sol-menu-menu-wrapper{position:absolute;top:0;bottom:0}
+.sol-menu-menu-wrapper{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;top:0;bottom:0;background:#222;z-index:9999;-webkit-transition:all .2s;transition:all .2s;color:#eee}.sol-menu-menu-wrapper.aktif{left:0!important}.sol-menu-body-cover{z-index:9998;position:fixed;left:0;top:0;width:0;height:0}.sol-menu-body-cover.aktif{width:auto;height:auto;right:0;bottom:0}

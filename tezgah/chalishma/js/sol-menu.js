@@ -10,10 +10,20 @@
             $('body').prepend('<div class="sol-menu-menu-wrapper" style="width: ' + bl_menu.width + 'px; left: -' + bl_menu.width + 'px;"></div>');
             el.appendTo('.sol-menu-menu-wrapper');
 
-            /* Sol menu için aç - kapat butonunu taşıyacak bir layer yarat 
-            ** bu layer aynı zamanda menu açıldığında bodynin üzerinde cover
-            ** işlevi görecek */
-            $('.sol-menu-body-wrapper').prepend('<div class="sol-menu-ac-kapat-buton"></div>');
+            /* Sol menu açıkken bodynin üzerinde cover işlevi görecek
+            ** layer yarat. Aynı zamanda tıklanıldığında menuyu kapatacak */
+            $('body').append('<div class="sol-menu-body-cover"></div>');
+
+            $('.sol-menu-body-wrapper').click(bl_menu.toggleMenu);
+        },
+        toggleMenu: function() {
+            $('.sol-menu-menu-wrapper').toggleClass('aktif');
+        },
+        openMenu: function() {
+            $('.sol-menu-menu-wrapper').addClass('aktif');
+        },
+        closeMenu: function() {
+            $('.sol-menu-menu-wrapper').removeClass('aktif');
         }
     }
 
