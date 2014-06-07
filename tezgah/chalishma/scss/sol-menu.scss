@@ -7,6 +7,7 @@
     z-index: 9999;
     transition: all .2s;
     color: #ddd;
+    overflow: auto;
     a {
         color: inherit;
         text-decoration: none;
@@ -17,7 +18,7 @@
 }
 
 .sol-menu-body-cover {
-    z-index: 9998;
+    z-index: 9989;
     position: fixed;
     left: 0px;
     top: 0px;
@@ -34,7 +35,6 @@
 .sol-menu-body-wrapper {
     transition: all .2s;
     &.aktif {
-        filter: grayscale(0.75) blur(1px);
-        transform: scale(.98);
+        filter: grayscale(0.75) blur(4px);
     }
 }

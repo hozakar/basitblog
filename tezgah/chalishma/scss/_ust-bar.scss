@@ -3,18 +3,66 @@
     margin-bottom: 90px;
     .bar-bg {
         width: 100%;
-        height: 440px;
+        height: $bar-ince;
     }
-    .menu-buton {
-        position: absolute;
-        left: 0;
-        top: 0;
-        padding: 6px;
-        margin: 6px;
-        border-radius: 3px;
-        color: #ddd;
-        cursor: pointer;
-        background: rgba(0,0,0,.2);
+    .menu-bar {
+        position: fixed;
+        z-index: 9998;
+        height: 60px;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        transition: all $sure-birim * 2;
+        .menu-buton {
+            float: left;
+            padding: 6px;
+            margin: 6px;
+            border-radius: 3px;
+            color: #ddd;
+            cursor: pointer;
+        }
+        .sosyal {
+            float: right;
+            padding: 6px;
+            margin: 10px 6px;
+            border-radius: 3px;
+            color: #ddd;
+            text-align: right;
+            a {
+                color: #222;
+                display: inline-block;
+                line-height: 28px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                border-radius: 50%;
+                background: #fcfcfc;
+                transition: all $sure-birim;
+                &:hover {
+                    background: #222;
+                    color: #eee;
+                }
+            }
+        }
+        &.alt {
+            color: #222;
+            background: #fcfcfc;
+            box-shadow: 2px 0px 4px rgba(0,0,0,.4);
+            .menu-buton {
+                color: #222;
+            }
+            .sosyal {
+                color: #222;
+                a {
+                    color: #eee;
+                    background: #222;
+                    &:hover {
+                        background: #eee;
+                        color: #222;
+                    }
+                }
+            }
+        }
     }
     .avatar {
         position: absolute;
@@ -26,7 +74,7 @@
         margin: auto;
         border-radius: 50%;
         background: url(../images/avatar.png);
-        border: 5px solid white;
+        border: 5px solid #fff;
         box-shadow: 0px 0px 4px rgba(0,0,0,.3);
     }
     .sayfa-baslik {

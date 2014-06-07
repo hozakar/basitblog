@@ -9,6 +9,9 @@
                 if(param.width) bl_menu.width = param.width;
             }
 
+            /* Body'nin overflow'unu bir kenara yazalım */
+            $('body').data('overflow', $('body').css('overflow'));
+
             /* Tüm Body içeriğini taşımak için bir layer yarat */
             $('body').wrapInner('<div class="sol-menu-body-wrapper"></div>');
 
@@ -45,9 +48,11 @@
         if(bl_menu.menu.hasClass('aktif')) {
             bl_menu.cover.addClass('aktif');
             bl_menu.body.addClass('aktif');
+            $('body').css('overflow', 'hidden');
         } else {
             bl_menu.cover.removeClass('aktif');
             bl_menu.body.removeClass('aktif');
+            $('body').css('overflow', $('body').data('overflow'));
         }
     }
 
