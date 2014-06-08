@@ -1,0 +1,15 @@
+Options +FollowSymlinks
+RewriteEngine On
+ReWriteBase /
+
+RewriteRule ^ara/(.*)/(.*).html$ index.php?ara=$2&sayfa=$1
+RewriteRule ^etiket/(.*)/(.*).html$ index.php?etiket=$2&sayfa=$1
+RewriteRule ^ara/(.*).html$ index.php?ara=$1&sayfa=1
+RewriteRule ^etiket/(.*).html$ index.php?etiket=$1&sayfa=1
+
+RewriteRule ^sayfa/(.*)/$ index.php?sayfa=$1
+
+RewriteRule ^index.html$ index.php
+RewriteRule ^/$ index.php
+
+RewriteRule ^(.*).html$ index.php?url=$1 [QSA]

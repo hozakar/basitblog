@@ -21,6 +21,7 @@ function getDir($dosya = 'functions.php') {
 }
 
 function seo($s){
+    /* bu preg işlerinden hiç hazzetmiyorum...
     $tr = array('ş','Ş','ı','İ','ğ','Ğ','ü','Ü','ö','Ö','ç','Ç');
     // Türkçe karakterlerin çevirlecegi karakterler
     $en = array('s','s','i','i','g','g','u','u','o','o','c','c');
@@ -32,7 +33,30 @@ function seo($s){
     $s = preg_replace('|-+|', '-', $s);
     $s = str_replace("--","-",$s);
     $s = trim($s, '-');
+    */
+
+    $s = charReplace($s);
+    $s = lCase($s);
+    $s = str_replace("--","-",$s);
+    $s = trim($s, '-');
+
+    /* buraya url satirinin çiftlemesini engelleyecek birşeyler yaz */
+
     return $s;
+}
+
+function lCase($gelen) {
+    $first = explode(',', 'A,B,C,Ç,D,E,F,G,Ğ,H,I,İ,J,K,L,M,N,O,Ö,P,Q,R,S,Ş,T,U,Ü,V,W,X,Y,Z');
+    $last = explode(',', 'a,b,c,ç,d,e,f,g,ğ,h,i,i,j,k,l,m,n,o,ö,p,q,r,s,ş,t,u,ü,v,w,x,y,z');
+    $answer = str_replace($first,$last,$gelen);
+    return $answer;
+}
+
+function charReplace($gelen) {
+    $first = explode(',', '",é,!,\',^,#,+,$,%,&,/,{,(,[,),],=,},?,*,\\,_,+,@,€,¨,~,´,;,\,,`,.,:,<,>,|, ');
+    $first[] = ',';
+    $answer = str_replace($first,'-',$gelen);
+    return $answer;
 }
 
 function filtre($gelen){

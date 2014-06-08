@@ -38,6 +38,14 @@ h4 { font-size: 1.2em; }
     background: url(../images/ayrac.png) center no-repeat;
 }
 
+.makaleliste {
+    .ayrac {
+        &:nth-child(1) {
+            display: none;
+        }
+    }
+}
+
 .sayfalama {
     margin-top: 30px;
     .btn {
