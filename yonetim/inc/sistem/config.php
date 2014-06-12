@@ -2,9 +2,7 @@
 session_start();
 error_reporting(0);
 
-include(getDir().'vtbilgi.php');
-
-$_SESSION['hoy'] = 'hay';
+include('vtbilgi.php');
 
 /****/
 $_SESSION['sid'] = 1;

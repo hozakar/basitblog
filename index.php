@@ -1,5 +1,5 @@
 <?php
-    include("inc/system/functions.php");
+    include("yonetim/inc/sistem/functions.php");
     if($_REQUEST['url']) {
         $site->makale($_REQUEST['url']);
         $dosya = getDir('index.php')."yonetim\\sablon\\".$site->url['sablon'];

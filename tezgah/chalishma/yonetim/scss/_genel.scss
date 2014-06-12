@@ -1,0 +1,15 @@
+body {
+    font-family: $roboto;
+    font-size: 18px;
+    line-height: 1.6;
+    position: relative;
+}
+
+h1, h2, h3, h4 {
+    font-family: $oswald;
+    span.small {
+        font-family: $roboto;
+        font-size: .5em;
+        color: #aaa;
+    }
+}

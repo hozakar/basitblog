@@ -1,0 +1,77 @@
+.body {
+    position: absolute;
+    left: 320px;
+    right: 0px;
+    top: 0px;
+    overflow: hidden;
+    padding-top: 60px;
+
+    .body-icerik {
+        font-size: 15px;
+        @media (min-width: 1200px) {
+            .container {
+                width: 100%;
+                max-width: 1520px;
+                padding: 30px;
+            }
+        }
+    }
+
+    .ayrac {
+        height: 30px;
+    }
+
+    .ust-bar {
+        position: fixed;
+        top: 0;
+        width: calc(100% - 320px);
+        height: 60px;
+        background: #f9f9f9;
+        box-shadow: 0 0 2px rgba(0,0,0,.3);
+
+        .body-menu-btn {
+            float: left;
+            margin: 12px;
+            display: none;
+        }
+
+        .kullanici {
+            float: right;
+            position: relative;
+            margin: 10px 12px;
+
+            a {
+                text-decoration: none;
+                color: #aaa;
+                .isim {
+                    float: right;
+                    display: block;
+                    margin-top: 5px;
+                    overflow: hidden;
+                    height: 1.6em;
+                    transition: all .4s;
+                    div {
+                        float: right;
+                    }
+                }
+                img {
+                    float: right;
+                    width: 40px;
+                    margin-right: 3px;
+                    border-radius: 50%;
+                    border: 1px solid #ddd;
+                    background: #fff;
+                }
+            }
+            .dropdown-menu {
+                width: 220px;
+                right: -12px;
+                left: auto;
+                margin-top: 10px;
+                i {
+                    width: 18px;
+                }
+            }
+        }
+    }
+}

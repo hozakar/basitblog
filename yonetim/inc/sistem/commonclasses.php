@@ -24,8 +24,8 @@ class site {
         $sql = "
             SELECT
                 makaleler.*, 
-                kullanicilar.isim as kullaniciisim, 
-                kullanicilar.eposta as kullaniciposta
+                kullanicilar.isim as yazar, 
+                kullanicilar.eposta as yazarposta
             FROM 
                 makaleler 
             INNER JOIN kullanicilar 
@@ -146,7 +146,7 @@ class site {
 
         $sql = "
             SELECT 
-                makaleler.*, makaleler.icerik as kisametin, makaleler.icerik as ortametin, makaleler.icerik as uzunmetin, CONCAT(foto.id, foto.uzanti) as foto, foto.aciklama as fotoAciklama, IFNULL(renksec.renk, '#ccc') as renk
+                makaleler.*, makaleler.icerik as kisametin, makaleler.icerik as ortametin, makaleler.icerik as uzunmetin, CONCAT(foto.id, foto.uzanti) as foto, foto.aciklama as fotoAciklama, IFNULL(renksec.renk, '#ccc') as renk, kullanicilar.isim as yazar
             FROM 
                 makaleler 
             LEFT JOIN 
@@ -370,6 +370,10 @@ class site {
         //echo $sql;
         $rs = $this->db->query($sql);
         while($rec = $rs->fetch_array()) $this->donguicerik($rec, $kod);
+    }
+
+    public function sbyaz($gelen) {
+        echo $this->sb[$gelen];
     }
 }
 ?>
