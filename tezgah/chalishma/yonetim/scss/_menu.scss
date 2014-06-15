@@ -1,20 +1,33 @@
 .menu {
     font-family: $oswald;
-    width: 320px;
+    width: $menu-genislik;
     background: #222;
     position: fixed;
     top: 0px;
     bottom: 0px;
+    left: 0px;
     overflow: hidden;
+    transition: all $sure-birim;
+    z-index: 2;
 
     ul {
         padding: 0;
-        margin: 24px 0px 0px 0px;
+        margin: 10px 0px 0px 0px;
         list-style: none;
 
         li {
             padding: 3px 9px;
             color: #ddd;
+            border-top: 1px solid #2c2c2c;
+
+            &.menu-kapat {
+                display: none;
+                margin-bottom: 12px;
+                .btn-default {
+                    background: #f3f3f3;
+                }
+                i { width: auto; }
+            }
 
             i {
                 display: inline-block;
@@ -30,8 +43,15 @@
                 }
             }
 
-            &.bordered {
-                border-top: 1px solid #2c2c2c;
+            .badge {
+                font-family: $roboto;
+                color: #333;
+                background: #f3f3f3;
+                font-size: .75em;
+            }
+
+            &.cercevesiz {
+                border: none;
             }
             &.aktif {
                 background: #2c2c2c;
@@ -45,7 +65,7 @@
                     font-size: .8em;
                     line-height: 2;
                     display: inline-block;
-                    color: #fff6ca;
+                    color: #f0f0f0;
                     padding-right: .25em;
                     text-shadow: 0 0 3px rgba(240,240,240,.9);
                     content: "\f111";
@@ -59,10 +79,6 @@
                     margin: 0;
                     background: transparent;
                 }
-            }
-            &.menu-ac-kapat {
-                display: none;
-                text-align: right;
             }
         }
     }

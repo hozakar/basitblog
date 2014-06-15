@@ -1,10 +1,11 @@
 .body {
     position: absolute;
-    left: 320px;
+    left: $menu-genislik;
     right: 0px;
     top: 0px;
     overflow: hidden;
     padding-top: 60px;
+    z-index: 1;
 
     .body-icerik {
         font-size: 15px;
@@ -24,14 +25,22 @@
     .ust-bar {
         position: fixed;
         top: 0;
-        width: calc(100% - 320px);
+        left: $menu-genislik;
+        right: 0;
         height: 60px;
         background: #f9f9f9;
         box-shadow: 0 0 2px rgba(0,0,0,.3);
+        z-index: 1;
+        transition: all $sure-birim;
 
         .body-menu-btn {
             float: left;
             margin: 12px;
+            button {
+                &:focus {
+                    outline: none;
+                }
+            }
             display: none;
         }
 
@@ -52,6 +61,7 @@
                     transition: all .4s;
                     div {
                         float: right;
+                         white-space: nowrap;
                     }
                 }
                 img {

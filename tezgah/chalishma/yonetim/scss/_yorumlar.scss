@@ -1,0 +1,13 @@
+.yorumlar {
+    .nav-tabs li {
+        a, a:hover {
+            border-radius: 0;
+            border-top: 3px solid #ccc;
+        }
+        &.active {
+            a, a:hover {
+                border-top: 3px solid #d9534f;
+            }
+        }
+    }
+}

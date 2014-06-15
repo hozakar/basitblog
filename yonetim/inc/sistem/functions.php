@@ -65,5 +65,10 @@ function filtre($gelen){
     return $filtre;
 }
 
+function s_addslashes($gelen) {
+    global $slashkullan;
+    if($slashkullan) $gelen = addslashes($gelen);
+    return $gelen;
+}
 ?>
 

@@ -13,3 +13,82 @@ h1, h2, h3, h4 {
         color: #aaa;
     }
 }
+
+.modal-body {
+    label {
+        font-size: .8em;
+    }
+}
+
+/* Menu Aç Kapat */
+@media (max-width: 1365px) {
+    .menu {
+        left: -1 * $menu-genislik;
+        .menu-kapat {
+            display: block !important;
+        }
+    }
+
+    .body {
+        left: 0;
+        .ust-bar {
+            left: 0;
+            .body-menu-btn {
+                display: block;
+            }
+        }
+    }
+}
+
+.acik {
+    &.menu {
+        left: 0;
+    }
+
+    &.body {
+        transition: all $sure-birim;
+        filter: blur(3px);
+
+        .ust-bar {
+            left: $menu-genislik;
+            .body-menu-btn {
+                display: none;
+            }
+        }
+    }
+}
+/* Son: Menu Aç Kapat */
+
+/* Mobil boyutunda kapanacak elementler */
+@media (max-width: 767px) {
+    .xs-kapat {
+        display: none !important;
+    }
+}
+/* Son: Mobil boyutunda kapanacak elementler */
+
+/* Uzun Metin Ellipsis */
+.liste-uzun-metin {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 500px;
+    overflow: hidden;
+}
+@media (max-width: 1199px) {
+    .liste-uzun-metin {
+        width: 355px;
+    }
+}
+@media (max-width: 991px) {
+    .liste-uzun-metin {
+        width: 270px;
+    }
+}
+@media (max-width: 479px) {
+    .liste-uzun-metin {
+        width: 180px;
+    }
+}
+/* Son: Uzun Metin Ellipsis */
+
