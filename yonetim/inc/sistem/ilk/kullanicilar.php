@@ -23,6 +23,5 @@
             }
             break;
     }
-
-    return;
+    $returndummy = TRUE;
 ?>

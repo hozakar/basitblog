@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2014-06-08 23:52:52
+Date: 2014-06-17 00:04:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,8 +26,8 @@ CREATE TABLE `etiketgruplari` (
   UNIQUE KEY `eid_2` (`eid`,`mid`),
   KEY `eid` (`eid`),
   KEY `mid` (`mid`),
-  CONSTRAINT `etiketgruplari_ibfk_2` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `etiketgruplari_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `etiketler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `etiketgruplari_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `etiketler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `etiketgruplari_ibfk_2` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -84,7 +84,7 @@ CREATE TABLE `foto` (
   KEY `uzanti` (`uzanti`),
   KEY `sira` (`sira`),
   CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of foto
@@ -106,17 +106,19 @@ CREATE TABLE `kullanicilar` (
   `eposta` varchar(255) NOT NULL,
   `sifre` varchar(255) NOT NULL,
   `duzey` tinyint(4) NOT NULL DEFAULT '0',
-  `sid` int(11) NOT NULL,
+  `sid` int(11) NOT NULL DEFAULT '1',
+  `aktif` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `eposta` (`eposta`),
   KEY `sid` (`sid`),
   CONSTRAINT `kullanicilar_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kullanicilar
 -- ----------------------------
-INSERT INTO `kullanicilar` VALUES ('1', 'Hakan Özakar', 'hozakar@gmail.com', '4321', '0', '1');
+INSERT INTO `kullanicilar` VALUES ('1', 'Hakan Özakar', 'hozakar@gmail.com', 'd93591bdf7860e1e4ee2fca799911215', '1', '1', '1');
+INSERT INTO `kullanicilar` VALUES ('2', 'Blues Belt', 'belt@belt.com', 'd93591bdf7860e1e4ee2fca799911215', '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for `makaleler`
@@ -149,7 +151,7 @@ CREATE TABLE `makaleler` (
 -- ----------------------------
 -- Records of makaleler
 -- ----------------------------
-INSERT INTO `makaleler` VALUES ('1', 'İyi ama bir tren bunu yapabilir mi?', 'Yapamaz...', 'Deneme', 'Tren', '2014-06-08 17:34:58', '1', '1', '0', 'iyi-ama-bir-tren-bunu-yapabilir-mi', 'makale.html', '1');
+INSERT INTO `makaleler` VALUES ('1', 'İyi ama bir tren bunu yapabilir mi?', 'Yapamaz...', 'Deneme', 'Tren', '2014-06-16 22:29:33', '1', '1', '0', 'iyi-ama-bir-tren-bunu-yapabilir-mi', 'makale.html', '1');
 INSERT INTO `makaleler` VALUES ('2', 'Herhangi bir konu hakkında ileri geri birkaç laf edesim var', 'Ufaktan anlatayım bari', '                    <p>\r\n                        There’s a reason I don’t write bad Yelp reviews or comment on shitty YouTube videos: I don’t believe in wasting words on things I don’t like. So why have I spent so much time and so many words on <em>Frozen</em>, a movie I openly loathed?\r\n                    </p>\r\n                    <p>\r\n                        <img src=\"inc/images/space_3.png\" style=\"width: 100%; height: 480px;\" />\r\n                    </p>\r\n                    <h2>\r\n                        Biraz daha yaz\r\n                    </h2>\r\n                    <p>\r\n                        In a recent DGA (Director’s Guild of America) “Women’s Steering Committee” meeting, the DGA resolved to “work diligently” to solve the problem of the gender imbalance in film. Everyone patted themselves on the back, declared the job mostly done and went home, except for the people <a target=\"_blank\" href=\"http://www.lexi-alexander.com/blog/2014/1/13/this-is-me-getting-real\">who pointed out</a> that the EEOC resolved to do exactly the same thing in <a target=\"_blank\" href=\"http://www.law.umaryland.edu/marshall/usccr/documents/cr12em712.pdf\">1978</a> — fourteen years after motion picture studios were found almost uniformly in violation of the Civil Rights Act of 1964. The state of the industry for women is absolutely abysmal, and has been for decades.\r\n                    </p>\r\n                    <h2>\r\n                        Bir daha çal Sam...\r\n                    </h2>\r\n                    <p>\r\n                        <img src=\"inc/images/space_5.png\" style=\"width: 100%;\" />\r\n                    </p>\r\n                    <p>\r\n                        <img src=\"inc/images/space_0.png\" style=\"width: 240px; height: 240px; float: left; margin-right: 12px;\" />\r\n                        There’s a reason I don’t write bad Yelp reviews or comment on shitty YouTube videos: I don’t believe in wasting words on things I don’t like. So why have I spent so much time and so many words on <em>Frozen</em>, a movie I openly loathed?\r\n                    </p>\r\n                    <h3>\r\n                        Bi siktir git Sam...\r\n                    </h3>\r\n                    <p>\r\n                        In a recent DGA (Director’s Guild of America) “Women’s Steering Committee” meeting, the DGA resolved to “work diligently” to solve the problem of the gender imbalance in film. Everyone patted themselves on the back, declared the job mostly done and went home, except for the people <a target=\"_blank\" href=\"http://www.lexi-alexander.com/blog/2014/1/13/this-is-me-getting-real\">who pointed out</a> that the EEOC resolved to do exactly the same thing in <a target=\"_blank\" href=\"http://www.law.umaryland.edu/marshall/usccr/documents/cr12em712.pdf\">1978</a> — fourteen years after motion picture studios were found almost uniformly in violation of the Civil Rights Act of 1964. The state of the industry for women is absolutely abysmal, and has been for decades.\r\n                    </p>\r\n\r', 'Bu da tren', '2014-06-08 17:36:11', '1', '1', '0', 'herhangi-bir-konu-hakkinda-ileri-geri-birkaç-laf-edesim-var', 'makale.html', '1');
 
 -- ----------------------------
@@ -158,7 +160,7 @@ INSERT INTO `makaleler` VALUES ('2', 'Herhangi bir konu hakkında ileri geri bir
 DROP TABLE IF EXISTS `sitebilgi`;
 CREATE TABLE `sitebilgi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dil` varchar(5) NOT NULL,
+  `dil` varchar(5) NOT NULL DEFAULT 'tr',
   `charset` varchar(255) NOT NULL DEFAULT 'utf-8',
   `zamandilimi` varchar(255) NOT NULL DEFAULT 'Asia/Istanbul',
   `aciklama` varchar(1000) DEFAULT NULL,
@@ -174,7 +176,7 @@ CREATE TABLE `sitebilgi` (
   `kisametin` smallint(6) NOT NULL DEFAULT '25',
   `ortametin` smallint(6) NOT NULL DEFAULT '60',
   `uzunmetin` smallint(6) NOT NULL DEFAULT '120',
-  `satirsayi` tinyint(4) DEFAULT '10',
+  `satirsayi` tinyint(4) NOT NULL DEFAULT '10',
   `yazar` varchar(255) DEFAULT NULL,
   `yazarposta` varchar(255) DEFAULT NULL,
   `anadizin` varchar(255) NOT NULL DEFAULT '/',
@@ -191,7 +193,7 @@ CREATE TABLE `sitebilgi` (
 -- ----------------------------
 -- Records of sitebilgi
 -- ----------------------------
-INSERT INTO `sitebilgi` VALUES ('1', 'tr', 'utf-8', 'Asia/Istanbul', 'Basit Blog', 'beltslib, blog, basit', 'BELTLIB.NET', 'http://beltslib.net', 'inc/images/space_2.png', 'Basit Blog', 'BELTSLIB.NET', 'Göktaşına nanik yapan dinozor...', 'd/m/Y', 'd/m/Y H:i', '25', '60', '120', '10', 'Hakan Özakar', 'hozakar@gmail.com', '/', 'hozakar@gmail.com', null, null, null, null, '1', '0');
+INSERT INTO `sitebilgi` VALUES ('1', 'tr', 'utf-8', 'Asia/Istanbul', 'Basit Blog', 'beltslib, blog, basit', 'BELTSLIB.NET', 'http://beltslib.net', 'inc/images/space_2.png', 'Basit Blog', 'BELTSLIB.NET', 'Göktaşına nanik yapan dinozor...', 'd/m/Y', 'd/m/Y H:i', '25', '60', '120', '10', 'Hakan Özakar', 'hozakar@gmail.com', '/', 'hozakar@gmail.com', '', '', '', '', '1', '1');
 
 -- ----------------------------
 -- Table structure for `sosyal`
@@ -244,6 +246,5 @@ CREATE TABLE `yorumlar` (
 -- ----------------------------
 -- Records of yorumlar
 -- ----------------------------
-INSERT INTO `yorumlar` VALUES ('1', '2', null, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hakan@beltslib.net', 'http://beltslib.net', '2014-06-08 19:42:48', '1');
-INSERT INTO `yorumlar` VALUES ('6', '2', null, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hozakar@gmail.com', 'http://beltslib.net', '2014-06-08 19:47:29', '1');
-INSERT INTO `yorumlar` VALUES ('7', '2', null, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hozakar@hotmail.com', 'http://beltslib.net', '2014-06-08 20:33:44', '1');
+INSERT INTO `yorumlar` VALUES ('1', '2', null, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hakan@beltslib.net', 'http://beltslib.net', '2014-06-17 00:02:25', '0');
+INSERT INTO `yorumlar` VALUES ('6', '1', null, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hozakar@gmail.com', 'http://beltslib.net', '2014-06-17 00:03:29', '0');

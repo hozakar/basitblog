@@ -12,5 +12,7 @@ $rs = $db->query("SELECT * FROM sitebilgi".($_SESSION['sid'] ? " WHERE id = ".$_
 $sb = $rs->fetch_assoc();
 $_SESSION['sid'] = $sb['id'];
 
+$satirsayi = 15; // Yönetim Panelinde Liste Sayfalarında Sayfa Başına Kayıt Sayısı
+
 date_default_timezone_set($sb['zamandilimi']);
 ?>

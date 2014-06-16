@@ -1,6 +1,7 @@
 <?php
     include("inc/sistem/functions.php");
     include("inc/sistem/yonetim.php");
+    if($returndummy) return;
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -65,6 +66,7 @@
                 <li class="menu-kapat cercevesiz text-right">
                     <button class="btn btn-default"><i class="fa fa-bars"></i></button>
                 </li>
+
                 <li class="cercevesiz">
                     <form class="form">
                         <div class="input-group">
@@ -73,15 +75,21 @@
                         </div>
                     </form>
                 </li>
+
                 <li class="<?php echo !$_GET['sayfa'] ? 'aktif' : ''?> cercevesiz">
                     <i class="fa fa-home"></i><a href="<?php $site->sbyaz('anadizin')?>yonetim/">Genel Görünüm</a>
                 </li>
+
                 <li class="<?php echo $_GET['sayfa'] == 'makaleler' ? 'aktif' : ''?>">
                     <i class="fa fa-edit"></i><a href="?sayfa=makaleler">Makaleler</a>
                 </li>
-                <li class="<?php echo $_GET['sayfa'] == 'etiketler' ? 'aktif' : ''?>">
-                    <i class="fa fa-tags"></i><a href="?sayfa=etiketler">Etiketler</a>
-                </li>
+
+                <?php   if($_SESSION['user']['duzey']) {?>
+                            <li class="<?php echo $_GET['sayfa'] == 'etiketler' ? 'aktif' : ''?>">
+                                <i class="fa fa-tags"></i><a href="?sayfa=etiketler">Etiketler</a>
+                            </li>
+                <?php   }?>
+
                 <li class="<?php echo $_GET['sayfa'] == 'yorumlar' ? 'aktif' : ''?>">
                     <?php $yorumlar = current($db->query("SELECT COUNT(*) FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid WHERE NOT yorumlar.aktif AND makaleler.kullanici = ".$_SESSION['user']['id'])->fetch_row());?>
                     <i class="fa fa-comments-o"></i><a href="?sayfa=yorumlar">Yorumlar&nbsp;&nbsp;
@@ -90,11 +98,13 @@
                         <?php   }?>
                     </a>
                 </li>
+
                 <?php   if($_SESSION['user']['duzey']) {?>
                             <li class="<?php echo $_GET['sayfa'] == 'ayarlar' ? 'aktif' : ''?>">
                                 <i class="fa fa-cogs"></i><a href="?sayfa=ayarlar">Site Ayarları</a>
                             </li>
                 <?php   }?>
+
                 <li class="<?php echo $_GET['sayfa'] == ($_SESSION['user']['duzey'] ? 'kullanicilar' : 'profil') ? 'aktif' : ''?>">
                     <i class="fa fa-users"></i><a href="?sayfa=<?php echo $_SESSION['user']['duzey'] ? 'kullanicilar' : 'profil'?>"><?php echo $_SESSION['user']['duzey'] ? 'Kullanıcılar' : 'Profil'?></a>
                 </li>

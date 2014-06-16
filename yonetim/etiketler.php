@@ -1,3 +1,6 @@
+<?php
+    if(!$_SESSION['user']['duzey']) return;
+?>
 <div class="container etiketler">
     <div class="row">
         <div class="col-xs-12">
