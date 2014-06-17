@@ -28,6 +28,24 @@ h2 { font-size: 1.8em; }
 h3 { font-size: 1.5em; }
 h4 { font-size: 1.2em; }
 
+blockquote {
+    margin: 0px 0px 0px 54px;
+    position: relative;
+    &:before {
+        content: "\f10d";
+        position: absolute;
+        left: -48px;
+        top: -6px;
+        color: #ccc;
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2em;
+        font-smoothing: antialiased;
+    }
+}
+
 .btn {
     border-radius : 99em;
 }

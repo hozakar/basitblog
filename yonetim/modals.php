@@ -15,7 +15,7 @@
                                     <div class="col-xs-12">
                                         <label class="control-label col-xs-3">İsim</label>
                                         <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="İsim" />
+                                            <input type="text" class="form-control" name="isim" value="<?php echo $_GET['isim'];?>" placeholder="İsim" />
                                         </div>
                                     </div>
                                 </div>
@@ -24,20 +24,7 @@
                                     <div class="col-xs-12">
                                         <label class="control-label col-xs-3">Etiket</label>
                                         <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Etiket" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row form-group">
-                                    <div class="col-xs-12">
-                                        <label class="control-label col-xs-3">Yazar</label>
-                                        <div class="col-xs-9">
-                                            <select class="form-control">
-                                                <option>Tümü</option>
-                                                <option>Hakan Özakar</option>
-                                                <option>Başka Biri</option>
-                                            </select>
+                                            <input type="text" class="form-control" name="etiket" value="<?php echo $_GET['etiket'];?>" placeholder="Etiket" />
                                         </div>
                                     </div>
                                 </div>
@@ -46,10 +33,10 @@
                                     <div class="col-xs-12">
                                         <label class="control-label col-xs-3">Durum</label>
                                         <div class="col-xs-9">
-                                            <select class="form-control">
-                                                <option>Tümü</option>
-                                                <option>Aktif Makaleler</option>
-                                                <option>Pasif Makaleler</option>
+                                            <select class="form-control" name="durum">
+                                                <option value="" <?php echo $_GET['durum'] == '' ? 'selected' : '';?>>Tümü</option>
+                                                <option value="1" <?php echo $_GET['durum'] == '1' ? 'selected' : '';?>>Aktif Makaleler</option>
+                                                <option value="0" <?php echo $_GET['durum'] == '0' ? 'selected' : '';?>>Pasif Makaleler</option>
                                             </select>
                                         </div>
                                     </div>

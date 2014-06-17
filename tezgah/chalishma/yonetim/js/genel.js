@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
     "use strict";
 
     /* Kullanıcı Menu Aktivasyonu */
@@ -62,24 +62,4 @@
         });
     }
     /* Son: Select2 */
-
-    /* Colorpicker */
-    $(function () {
-        if ($('.renksec').length) {
-            $('.renkseclink').click(function () {
-                var $renksec = $(this).parents('li').find('.renksec');
-                if ($renksec.length) $renksec.focus();
-            });
-
-            $('.renksec').colorpicker()
-                .on('changeColor', function (ev) {
-                    var $renkseclink = $(this).parents('li').find('.renkseclink');
-                    if ($renkseclink.length) $renkseclink.css('color', ev.color.toHex());
-                })
-                .on('hidePicker', function () {
-                    var renk = $(this).val();
-                });
-        }
-    });
-    /* Son: Colorpicker */
-})();
+})(jQuery);

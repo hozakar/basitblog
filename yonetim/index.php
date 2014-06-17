@@ -161,6 +161,7 @@
                         tinymce.init({
                             selector: ".icerik",
                             language : 'tr_TR',
+                            content_css : "<?php $site->sbyaz('anadizin')?>inc/css/stil.min.css?date<?php echo date('YmdHis');?>",
                             plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons',
                             menubar: false,
                             toolbar: [
