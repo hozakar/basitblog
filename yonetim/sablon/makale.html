@@ -14,13 +14,13 @@
 		<meta property="og:title" content="[[sayfabilgi((baslik))]] | [[sitebilgi((baslik))]]" />
 		<meta property="og:type" content="article" />
 		<meta property="og:image" content="[[sitebilgi((url))]]/upload/foto/normal/[[sayfabilgi((ilkfoto))]]" />
-		<meta property="og:url" content="[[sitebilgi((url))]]/[[sayfabilgi((url))]].html" />
+		<meta property="og:url" content="[[sitebilgi((url))]][[sayfabilgi((url))]]" />
 		<meta property="og:description" content="[[sayfabilgi((aciklama))]]" />
 		<meta property="og:site_name" content="[[sitebilgi((isim))]]" /> 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="[[sitebilgi((baslik))]]" />
 		<meta name="twitter:site" content="[[sitebilgi((isim))]]" />
-		<meta name="twitter:url" content="[[sitebilgi((url))]]/[[sayfabilgi((url))]].html" />
+		<meta name="twitter:url" content="[[sitebilgi((url))]][[sayfabilgi((url))]]" />
 		<meta name="twitter:title" content="[[sayfabilgi((baslik))]]" />
 		<meta name="twitter:description" content="[[sayfabilgi((aciklama))]]" />
 		<meta name="twitter:creator" content="[[sayfabilgi((yazar))]] [[sayfabilgi((yazarposta))]]" />
@@ -43,6 +43,9 @@
 		<!-- Özel Stil Dosyaları -->
 		<link href="[[sitebilgi((anadizin))]]inc/css/stil.min.css" rel="stylesheet">
         <link href="[[sitebilgi((anadizin))]]inc/css/sol-menu.min.css" rel="stylesheet">
+
+		<!-- jQuery Sayfa İçeriğinde Gerekebileceğinden Öncelikli Yükleniyor -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 		<!-- IE8 Desteği için -->
 		<!--[if lt IE 9]>
@@ -130,8 +133,8 @@
 
             <div class="row alt-bilgi paylas">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-right">
-                    <a href="#[[sitebilgi((url))]]/[[sayfabilgi((url))]].html" title="Twitter'da Paylaş"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    <a href="#[[sitebilgi((url))]]/[[sayfabilgi((url))]].html" title="Facebook'ta Paylaş"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    <a href="[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Twitter'da Paylaş"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    <a href="[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Facebook'ta Paylaş"><i class="fa fa-2x fa-facebook-square"></i></a>
                 </div>
             </div>
 
@@ -202,7 +205,6 @@
         [[ekle((eklemeler/altbar.html))]]
 
 		<!-- Genel JavaScript Dosyaları -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="inc/js/bootstrap.min.js"></script>
 		<script src="inc/js/imgfix.min.js"></script>
 		<script src="inc/js/sscr.js"></script>

@@ -20,7 +20,7 @@ class site {
     public function makale($gelen) {
         if(!$gelen) $gelen = $_REQUEST['url'];
         if(!$gelen) return;
-        
+
         $sql = "
             SELECT
                 makaleler.*, 
@@ -31,11 +31,14 @@ class site {
             INNER JOIN kullanicilar 
                 ON kullanicilar.id = makaleler.kullanici 
             WHERE 
-                url = '$gelen'";
+                url = '$gelen'
+                AND (makaleler.aktif OR makaleler.kullanici = ".$_SESSION['user']['id'].")
+                
+        ";
         
         $rs = $this->db->query($sql);
         $this->url = $rs->fetch_array();
-
+        
         $sql = "SELECT etiketler.* FROM etiketgruplari INNER JOIN etiketler ON etiketler.id = etiketgruplari.eid WHERE etiketgruplari.mid = ".$this->url['id']." ORDER BY etiketler.isim";
         $rs = $this->db->query($sql);
         $item = array();
@@ -47,13 +50,12 @@ class site {
         $this->url['etiketler'] = $fullitem;
         $this->url['etiketliste'] = implode(', ', $item);
         
-        $sql = "SELECT CONCAT(id, uzanti) as isim, aciklama FROM foto WHERE mid = ".$this->url['id']." ORDER BY sira";
+        $sql = "SELECT CONCAT(id, uzanti) as isim FROM foto WHERE mid = ".$this->url['id']." ORDER BY sira";
         $rs = $this->db->query($sql);
         $item = array();
         while($dummy = $rs->fetch_array()) array_push($item, $dummy);
         $this->url['foto'] = $item;
         $this->url['ilkfoto'] = $item[0]['isim'];
-        $this->url['ilkfotoaciklama'] = $item[0]['aciklama'];
     }
 
     public function sayfaisle($gelen) {
@@ -134,7 +136,7 @@ class site {
     }
 
     private function sayfabilgi($alan) {
-        return $this->url[$alan];
+        return $this->bicimlendir($alan, $this->url[$alan]);
     }
 
     private function liste($kod) {
@@ -146,7 +148,7 @@ class site {
 
         $sql = "
             SELECT 
-                makaleler.*, makaleler.icerik as kisametin, makaleler.icerik as ortametin, makaleler.icerik as uzunmetin, CONCAT(foto.id, foto.uzanti) as foto, foto.aciklama as fotoAciklama, IFNULL(renksec.renk, '#ccc') as renk, kullanicilar.isim as yazar
+                makaleler.*, makaleler.icerik as kisametin, makaleler.icerik as ortametin, makaleler.icerik as uzunmetin, CONCAT(foto.id, foto.uzanti) as foto, IFNULL(renksec.renk, '#ccc') as renk, kullanicilar.isim as yazar
             FROM 
                 makaleler 
             LEFT JOIN 
@@ -182,6 +184,7 @@ class site {
                             OR kullanicilar.eposta LIKE '$ara'
                         ) ")."
                         AND makaleler.sid = $_SESSION[sid]
+                        ".($tip=='tum' ? "AND makaleler.akis" : "")."
                     GROUP BY makaleler.id
                     ORDER BY ".(!$ara ? "makaleler.yapiskan DESC, " : "")."makaleler.tarih DESC, foto.sira
                 ";
@@ -237,6 +240,7 @@ class site {
             WHERE 
                 mid = ".$this->url['id']."
                 AND ISNULL(yid)
+                AND aktif
             ORDER BY tarih DESC
         ";
 
@@ -350,7 +354,7 @@ class site {
     private function sonyazilar($sayi = 3, $kod) {
         $sql = "
             SELECT 
-                makaleler.*, CONCAT(foto.id, foto.uzanti) as foto, foto.aciklama as fotoAciklama, IFNULL(renksec.renk, '#ccc') as renk
+                makaleler.*, CONCAT(foto.id, foto.uzanti) as foto, IFNULL(renksec.renk, '#ccc') as renk
             FROM 
                 makaleler 
             LEFT JOIN 
@@ -367,7 +371,6 @@ class site {
             ORDER BY makaleler.tarih DESC, foto.sira
             LIMIT 0, $sayi
         ";
-        //echo $sql;
         $rs = $this->db->query($sql);
         while($rec = $rs->fetch_array()) $this->donguicerik($rec, $kod);
     }

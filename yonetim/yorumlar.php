@@ -1,9 +1,13 @@
 <?php
+    $makale = '';
+    if($_GET['sayfa'] == 'makale') {
+        $makale = "makaleler.id = $id AND";
+    }
     $aktifssayi = max($_GET['aktifssayi'], 1); //Aktif Sayfa Sayi
     $pasifssayi = max($_GET['pasifssayi'], 1); //Pasif Sayfa Sayi
     
-    $toplamaktifkayit = current($db->query("SELECT COUNT(*) FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid AND makaleler.kullanici = ".$_SESSION['user']['id']." WHERE yorumlar.aktif")->fetch_row());
-    $toplampasifkayit = current($db->query("SELECT COUNT(*) FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid AND makaleler.kullanici = ".$_SESSION['user']['id']." WHERE NOT yorumlar.aktif")->fetch_row());
+    $toplamaktifkayit = current($db->query("SELECT COUNT(*) FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid AND makaleler.kullanici = ".$_SESSION['user']['id']." WHERE $makale yorumlar.aktif")->fetch_row());
+    $toplampasifkayit = current($db->query("SELECT COUNT(*) FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid AND makaleler.kullanici = ".$_SESSION['user']['id']." WHERE $makale NOT yorumlar.aktif")->fetch_row());
 
     $toplamaktifsayfa = ceil($toplamaktifkayit / $satirsayi);
     $toplampasifsayfa = ceil($toplampasifkayit / $satirsayi);
@@ -11,7 +15,7 @@
     $atab = ($_SESSION['atab'] != '' ? $_SESSION['atab'] : $_GET['atab']);
     $_SESSION['atab'] = '';
 ?>
-<div class="container yorumlar">
+<div <?php if($_GET['acilis']=='yorumlar') { echo 'id="acilis"'; }?> class="container yorumlar">
     <div class="row">
         <div class="col-xs-12">
             <?php   $baslik = ($_GET['sayfa'] == 'yorumlar' ? 'h1' : 'h3');?>
@@ -55,6 +59,7 @@
         global $toplampasifkayit;
         global $toplamaktifsayfa;
         global $toplampasifsayfa;
+        global $makale;
 
         $ssayi = $pasifssayi;
         $toplamkayit = $toplampasifkayit;
@@ -66,7 +71,7 @@
             $toplamsayfa = $toplamaktifsayfa;
         }
 
-        $sql = "SELECT yorumlar.* FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid AND makaleler.kullanici = ".$_SESSION['user']['id']." WHERE ".($aktif ? 'yorumlar.aktif' : 'NOT yorumlar.aktif')." ORDER BY yorumlar.tarih ".($aktif ? 'DESC' : '')." LIMIT ".(($aktifssayi - 1) * $satirsayi).", ".$satirsayi;
+        $sql = "SELECT yorumlar.* FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid AND makaleler.kullanici = ".$_SESSION['user']['id']." WHERE $makale ".($aktif ? 'yorumlar.aktif' : 'NOT yorumlar.aktif')." ORDER BY yorumlar.tarih ".($aktif ? 'DESC' : '')." LIMIT ".(($aktifssayi - 1) * $satirsayi).", ".$satirsayi;
         $rs = $db->query($sql);
 ?>
         <table class="table table-hover">

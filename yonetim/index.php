@@ -69,8 +69,9 @@
 
                 <li class="cercevesiz">
                     <form class="form">
+                        <input type="hidden" name="sayfa" value="arama" />
                         <div class="input-group">
-                            <input type="text" class="form-control input-sm" name="hizliara" />
+                            <input type="text" class="form-control input-sm" name="hizliara" placeholder="Ara..." value="<?php echo $_GET['hizliara'];?>" />
                             <span class="input-group-addon"><button><i class="fa fa-search"></i></button></span>
                         </div>
                     </form>
@@ -84,11 +85,9 @@
                     <i class="fa fa-edit"></i><a href="?sayfa=makaleler">Makaleler</a>
                 </li>
 
-                <?php   if($_SESSION['user']['duzey']) {?>
-                            <li class="<?php echo $_GET['sayfa'] == 'etiketler' ? 'aktif' : ''?>">
-                                <i class="fa fa-tags"></i><a href="?sayfa=etiketler">Etiketler</a>
-                            </li>
-                <?php   }?>
+                <li class="<?php echo $_GET['sayfa'] == 'etiketler' ? 'aktif' : ''?>">
+                    <i class="fa fa-tags"></i><a href="?sayfa=etiketler">Etiketler</a>
+                </li>
 
                 <li class="<?php echo $_GET['sayfa'] == 'yorumlar' ? 'aktif' : ''?>">
                     <?php $yorumlar = current($db->query("SELECT COUNT(*) FROM yorumlar INNER JOIN makaleler ON makaleler.id = yorumlar.mid WHERE NOT yorumlar.aktif AND makaleler.kullanici = ".$_SESSION['user']['id'])->fetch_row());?>
@@ -142,7 +141,10 @@
 
             <!-- İçerik -->
             <div class="body-icerik">
-                <?php include($_GET['sayfa'].'.php');?>
+                <?php 
+                    $sayfaDummy = $_GET['sayfa'] ? $_GET['sayfa'] : 'anasayfa';
+                    include($sayfaDummy.'.php');
+                ?>
             </div>
             <!-- Son: İçerik -->
         </div>
@@ -162,10 +164,10 @@
                             selector: ".icerik",
                             language : 'tr_TR',
                             content_css : "<?php $site->sbyaz('anadizin')?>inc/css/stil.min.css?date<?php echo date('YmdHis');?>",
-                            plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons',
+                            plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons syntaxhighlighter',
                             menubar: false,
                             toolbar: [
-                                "code | undo redo | style-h2 style-h3 style-pre | bold italic underline strikethrough | forecolor | blockquote | link image | alignleft aligncenter alignright alignjustify | table | searchreplace"
+                                "code | undo redo | style-h2 style-h3 | syntaxhighlighter | bold italic underline strikethrough | forecolor | blockquote | link image | alignleft aligncenter alignright alignjustify | table | searchreplace"
                             ]
                         });
                     </script>
@@ -188,34 +190,15 @@
                     <script src="inc/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
                     <script src="inc/jquery-file-upload/js/jquery.fileupload-angular.js"></script>
                     <script src="inc/jquery-file-upload/js/app.js"></script>
+                    
+                    <!-- imgfix -->
                     <script>
-                        $('#fileupload')
-                            .bind('fileuploaddone', function (e, data) {
-                                var dosya = data.files[0].name;
-                                $.ajax({
-                                    url: "/upload/dosyaduzenle.php",
-                                    method: 'get',
-                                    data: {
-                                        dosya: dosya
-                                    }
-                                });
-                            })
-                            .bind('fileuploadstop', function (e) { alert('stop'); });
-
                         $('.makalefoto').imgfix({
                             scale: 1.05,
                             coverclass: 'cover',
                             cover: {
                                 slide: 'in-up'
                             }
-                        });
-                    </script>
-                    
-                    <!-- jQuery UI Sortable -->
-                    <script>
-                        $(function() {
-                            $( ".sirala" ).sortable();
-                            $( ".sirala" ).disableSelection();
                         });
                     </script>
         <?php   }?>

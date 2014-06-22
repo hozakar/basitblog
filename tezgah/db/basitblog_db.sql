@@ -32,7 +32,6 @@ CREATE TABLE `foto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mid` int(11) DEFAULT NULL,
   `uzanti` varchar(5) NOT NULL,
-  `aciklama` varchar(255) DEFAULT NULL,
   `sira` int(11) NOT NULL DEFAULT '999999',
   PRIMARY KEY (`id`),
   KEY `mid` (`mid`),
@@ -56,6 +55,23 @@ CREATE TABLE `kullanicilar` (
   CONSTRAINT `kullanicilar_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `log`;
+CREATE TABLE `log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `sayfa` varchar(255) DEFAULT NULL,
+  `terim` varchar(1000) DEFAULT NULL,
+  `mid` int(11) DEFAULT NULL,
+  `tarih` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tekil` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `sayfa` (`sayfa`),
+  KEY `terim` (`terim`(255)),
+  KEY `mid` (`mid`),
+  KEY `tarih` (`tarih`),
+  KEY `tekil` (`tekil`),
+  CONSTRAINT `log_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `makaleler`;
 CREATE TABLE `makaleler` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -63,12 +79,13 @@ CREATE TABLE `makaleler` (
   `altbaslik` varchar(255) DEFAULT NULL,
   `icerik` text,
   `aciklama` varchar(1000) DEFAULT NULL,
-  `tarih` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tarih` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `aktif` tinyint(4) NOT NULL DEFAULT '0',
   `kullanici` int(11) NOT NULL,
   `yapiskan` tinyint(4) NOT NULL DEFAULT '0',
   `url` varchar(255) DEFAULT NULL,
   `sablon` varchar(255) NOT NULL DEFAULT 'makale.html',
+  `akis` tinyint(4) NOT NULL DEFAULT '1',
   `sid` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `baslik` (`baslik`),
@@ -127,7 +144,12 @@ CREATE TABLE `sosyal` (
   PRIMARY KEY (`id`),
   KEY `sid` (`sid`),
   CONSTRAINT `sosyal_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+INSERT INTO `sosyal` VALUES ('1', 'GitHub', 'http://github.com', 'fa-github', 'black', 'white', '1', '0');
+INSERT INTO `sosyal` VALUES ('2', 'Twitter', 'http://twitter.com', 'fa-twitter', '#00ABF0', 'white', '1', '1');
+INSERT INTO `sosyal` VALUES ('3', 'Facebook', 'http://facebook.com', 'fa-facebook', '#3C599F', 'white', '1', '2');
+INSERT INTO `sosyal` VALUES ('4', 'RSS', 'http://beltslib.net/rss/', 'fa-rss', '#FEA501', 'white', '1', '3');
 
 DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
@@ -138,7 +160,7 @@ CREATE TABLE `yorumlar` (
   `isim` varchar(255) DEFAULT NULL,
   `eposta` varchar(255) DEFAULT NULL,
   `web` varchar(255) DEFAULT NULL,
-  `tarih` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tarih` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `aktif` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mid` (`mid`),

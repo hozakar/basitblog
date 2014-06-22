@@ -1,4 +1,8 @@
 <?php
+    $returndummy = TRUE;
+    if(!$_SESSION['user']['duzey']) {
+        return;
+    }
     switch ($_POST['islem']) {
         case 'renk':
             if($_POST['id']) {
@@ -11,5 +15,4 @@
             }
             break;
     }
-    $returndummy = TRUE;
 ?>

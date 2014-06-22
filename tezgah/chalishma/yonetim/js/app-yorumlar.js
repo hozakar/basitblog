@@ -17,7 +17,12 @@
                 atab: $(this).data('tab')
             }
         }).done(function () {
-            location.reload();
+            if ($('#makalekaydet').length) {
+                $('#makalekaydet').parents('form').append('<input type="hidden" name="acilis" value="yorumlar" />');
+                $('#makalekaydet').click();
+            } else {
+                location.reload();
+            }
         });
     });
 
@@ -31,7 +36,12 @@
                 atab: $(this).data('tab')
             }
         }).done(function () {
-            location.reload();
+            if ($('#makalekaydet').length) {
+                $('#makalekaydet').parents('form').append('<input type="hidden" name="acilis" value="yorumlar" />');
+                $('#makalekaydet').click();
+            } else {
+                location.reload();
+            }
         });
     });
 })(jQuery);

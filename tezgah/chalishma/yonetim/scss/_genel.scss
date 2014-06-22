@@ -66,29 +66,3 @@ h1, h2, h3, h4 {
     }
 }
 /* Son: Mobil boyutunda kapanacak elementler */
-
-/* Uzun Metin Ellipsis */
-.liste-uzun-metin {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: inline-block;
-    width: 500px;
-    overflow: hidden;
-}
-@media (max-width: 1199px) {
-    .liste-uzun-metin {
-        width: 355px;
-    }
-}
-@media (max-width: 991px) {
-    .liste-uzun-metin {
-        width: 270px;
-    }
-}
-@media (max-width: 479px) {
-    .liste-uzun-metin {
-        width: 180px;
-    }
-}
-/* Son: Uzun Metin Ellipsis */
-

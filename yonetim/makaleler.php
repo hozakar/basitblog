@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container makaleler">
     <div class="row">
         <div class="col-xs-12">
             <h1>MAKALELER</h1>
@@ -13,7 +13,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th class="xs-kapat">#</th>
                         <th class="xs-kapat">Tarih</th>
                         <th>Makale Adı</th>
                         <th class="xs-kapat">Etiketler</th>
@@ -36,7 +36,7 @@
                         while($makale = $rs->fetch_assoc()) {
                     ?>
                             <tr>
-                                <td><?php echo $makale['id'];?></td>
+                                <td class="xs-kapat"><?php echo $makale['id'];?></td>
                                 <td class="text-muted xs-kapat"><?php echo date('d/m/Y', strtotime($makale['tarih']));?></td>
                                 <td><a href="?sayfa=makale&id=<?php echo $makale['id'];?>" class="liste-uzun-metin" title="Düzenle"><?php echo $makale['baslik']?></a></td>
                                 <td class="xs-kapat">
@@ -50,6 +50,7 @@
                                     ?>
                                 </td>
                                 <td class="text-right">
+                                    <a href="<?php echo $sb['anadizin'].$makale['url'];?>.html" target="_blank" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Görüntüle"><i class="fa fa-eye"></i></a>
                                     <a href="?sayfa=makale&id=<?php echo $makale['id'];?>" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><i class="fa fa-edit"></i></a>
                                     <a href="javascript:;" class="btn btn-xs btn-danger makalesil" data-makale-id="<?php echo $makale['id'];?>" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-trash-o"></i></a>
                                     <a href="javascript:;" class="btn btn-xs btn-<?php echo $makale['aktif'] ? 'success' : 'default';?> aktifdegistir" data-makale-id="<?php echo $makale['id'];?>" data-toggle="tooltip" data-placement="top" title="Aktif/Pasif"><i class="fa fa-circle"></i></a>

@@ -20,19 +20,18 @@ function getDir($dosya = 'functions.php') {
 	return $h;
 }
 
-function seo($s){
-    /* bu preg işlerinden hiç hazzetmiyorum...
+function seo($s, $id){
+    /* ************************************************ **
+    ** Neden bilmiyorum, regex'ten hiç hazzetmiyorum... **
+    ** ************************************************ */
+
+    /* URL satırında Türkçe karakter olmaz diye tutturanlar aşağıdaki kısmı aktive edebilir... */
+    /*
     $tr = array('ş','Ş','ı','İ','ğ','Ğ','ü','Ü','ö','Ö','ç','Ç');
     // Türkçe karakterlerin çevirlecegi karakterler
     $en = array('s','s','i','i','g','g','u','u','o','o','c','c');
     $s = str_replace($tr,$en,$s);
     $s = strtolower($s);
-    $s = preg_replace('/&amp;amp;amp;amp;amp;amp;amp;amp;.+?;/', '-', $s);
-    $s = preg_replace('/[^%a-z0-9 _-]/', '-', $s);
-    $s = preg_replace('/\s+/', '-', $s);
-    $s = preg_replace('|-+|', '-', $s);
-    $s = str_replace("--","-",$s);
-    $s = trim($s, '-');
     */
 
     $s = charReplace($s);
@@ -40,12 +39,16 @@ function seo($s){
     $s = str_replace("--","-",$s);
     $s = trim($s, '-');
 
-    /* buraya url satirinin çiftlemesini engelleyecek birşeyler yaz */
+    /* Belirlenen URL kullanımda mı? */
+    global $db;
+    $kntr = 0;
+    while($hoy = current($db->query("SELECT id FROM makaleler WHERE url = '".$s.($kntr ? '-'.$kntr : '')."' AND id <> $id")->fetch_row())) $kntr++; // Ürkütücü
 
-    return $s;
+    return $s.($kntr ? '-'.$kntr : '');
 }
 
 function lCase($gelen) {
+    /* Biraz pirimitif bir yöntem, aslında mb_strtolower kullansam daha modern görünür :( */
     $first = explode(',', 'A,B,C,Ç,D,E,F,G,Ğ,H,I,İ,J,K,L,M,N,O,Ö,P,Q,R,S,Ş,T,U,Ü,V,W,X,Y,Z');
     $last = explode(',', 'a,b,c,ç,d,e,f,g,ğ,h,i,i,j,k,l,m,n,o,ö,p,q,r,s,ş,t,u,ü,v,w,x,y,z');
     $answer = str_replace($first,$last,$gelen);
