@@ -146,6 +146,9 @@ CREATE TABLE `sosyal` (
   CONSTRAINT `sosyal_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of sosyal
+-- ----------------------------
 INSERT INTO `sosyal` VALUES ('1', 'GitHub', 'http://github.com', 'fa-github', 'black', 'white', '1', '0');
 INSERT INTO `sosyal` VALUES ('2', 'Twitter', 'http://twitter.com', 'fa-twitter', '#00ABF0', 'white', '1', '1');
 INSERT INTO `sosyal` VALUES ('3', 'Facebook', 'http://facebook.com', 'fa-facebook', '#3C599F', 'white', '1', '2');
@@ -155,7 +158,6 @@ DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mid` int(11) NOT NULL,
-  `yid` int(11) DEFAULT NULL,
   `yorum` varchar(1000) DEFAULT NULL,
   `isim` varchar(255) DEFAULT NULL,
   `eposta` varchar(255) DEFAULT NULL,
@@ -164,8 +166,6 @@ CREATE TABLE `yorumlar` (
   `aktif` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mid` (`mid`),
-  KEY `yid` (`yid`),
   KEY `tarih` (`tarih`),
-  CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `yorumlar_ibfk_2` FOREIGN KEY (`yid`) REFERENCES `yorumlar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;

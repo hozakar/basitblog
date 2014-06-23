@@ -117,6 +117,29 @@
             }
         }
     }
+
+    .fotogaleri {
+        list-style: none;
+        padding: 0;
+        margin: 30px -1% 0px -1%;
+        overflow: hidden;
+        li {
+            float: left;
+            position: relative;
+            width: 23%;
+            padding: 6px;
+            box-shadow: 0 0 4px rgba(0,0,0,.25);
+            margin: 1%;
+            .gfoto {
+                width: 100%;
+            }
+        }
+        @media (max-width:540px) {
+            li {
+                width: 48%;
+            }
+        }
+    }
 }
 
 .modal {
@@ -128,4 +151,9 @@
     .margin-bottom-yok {
         margin-bottom: 0;
     }
+}
+
+/* LightBox alt yazıyı kaldır */
+.lb-number {
+    display: none !important;
 }

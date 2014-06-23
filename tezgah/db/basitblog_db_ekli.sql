@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2014-06-23 00:21:50
+Date: 2014-06-23 23:44:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -85,7 +85,7 @@ CREATE TABLE `foto` (
   KEY `uzanti` (`uzanti`),
   KEY `sira` (`sira`),
   CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of foto
@@ -104,8 +104,9 @@ INSERT INTO `foto` VALUES ('23', '3', '.jpg', '4');
 INSERT INTO `foto` VALUES ('24', '3', '.jpg', '6');
 INSERT INTO `foto` VALUES ('25', '3', '.jpg', '5');
 INSERT INTO `foto` VALUES ('26', '4', '.jpg', '999999');
-INSERT INTO `foto` VALUES ('27', '4', '.jpg', '999999');
-INSERT INTO `foto` VALUES ('28', '4', '.jpg', '999999');
+INSERT INTO `foto` VALUES ('29', '4', '.jpg', '999999');
+INSERT INTO `foto` VALUES ('30', '4', '.jpg', '999999');
+INSERT INTO `foto` VALUES ('31', '4', '.jpg', '999999');
 
 -- ----------------------------
 -- Table structure for `kullanicilar`
@@ -149,7 +150,7 @@ CREATE TABLE `log` (
   KEY `tarih` (`tarih`),
   KEY `tekil` (`tekil`),
   CONSTRAINT `log_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of log
@@ -158,6 +159,78 @@ INSERT INTO `log` VALUES ('14', 'anasayfa', '', null, '2014-06-23 00:00:03', '0'
 INSERT INTO `log` VALUES ('15', 'makale', '', '2', '2014-06-23 00:00:09', '0');
 INSERT INTO `log` VALUES ('16', 'makale', '', '2', '2014-06-23 00:01:26', '0');
 INSERT INTO `log` VALUES ('17', 'etiket', 'HTML5', null, '2014-06-23 00:15:45', '0');
+INSERT INTO `log` VALUES ('18', 'anasayfa', '', null, '2014-06-23 19:53:51', '1');
+INSERT INTO `log` VALUES ('19', 'anasayfa', '', null, '2014-06-23 19:54:01', '0');
+INSERT INTO `log` VALUES ('20', 'anasayfa', '', null, '2014-06-23 20:43:52', '0');
+INSERT INTO `log` VALUES ('21', 'makale', '', '3', '2014-06-23 20:44:12', '0');
+INSERT INTO `log` VALUES ('22', 'anasayfa', '', null, '2014-06-23 20:51:52', '0');
+INSERT INTO `log` VALUES ('23', 'anasayfa', '', null, '2014-06-23 20:51:54', '0');
+INSERT INTO `log` VALUES ('24', 'makale', '', '2', '2014-06-23 20:53:04', '0');
+INSERT INTO `log` VALUES ('25', 'makale', '', '2', '2014-06-23 20:56:09', '0');
+INSERT INTO `log` VALUES ('26', 'makale', '', '3', '2014-06-23 20:56:27', '0');
+INSERT INTO `log` VALUES ('27', 'makale', '', '2', '2014-06-23 20:56:33', '0');
+INSERT INTO `log` VALUES ('28', 'makale', '', '2', '2014-06-23 20:59:16', '0');
+INSERT INTO `log` VALUES ('29', 'makale', '', '2', '2014-06-23 21:32:04', '0');
+INSERT INTO `log` VALUES ('30', 'makale', '', '2', '2014-06-23 21:38:26', '0');
+INSERT INTO `log` VALUES ('31', 'makale', '', '2', '2014-06-23 21:38:41', '0');
+INSERT INTO `log` VALUES ('32', 'makale', '', '2', '2014-06-23 21:39:29', '0');
+INSERT INTO `log` VALUES ('33', 'makale', '', '2', '2014-06-23 21:40:09', '0');
+INSERT INTO `log` VALUES ('34', 'makale', '', '2', '2014-06-23 21:40:34', '0');
+INSERT INTO `log` VALUES ('35', 'makale', '', '2', '2014-06-23 21:40:55', '0');
+INSERT INTO `log` VALUES ('36', 'makale', '', '2', '2014-06-23 21:41:10', '0');
+INSERT INTO `log` VALUES ('37', 'makale', '', '2', '2014-06-23 21:41:24', '0');
+INSERT INTO `log` VALUES ('38', 'makale', '', '2', '2014-06-23 21:41:52', '0');
+INSERT INTO `log` VALUES ('39', 'makale', '', '2', '2014-06-23 21:42:28', '0');
+INSERT INTO `log` VALUES ('40', 'makale', '', '2', '2014-06-23 21:43:05', '0');
+INSERT INTO `log` VALUES ('41', 'makale', '', '2', '2014-06-23 21:43:54', '0');
+INSERT INTO `log` VALUES ('42', 'makale', '', '2', '2014-06-23 21:45:26', '0');
+INSERT INTO `log` VALUES ('43', 'makale', '', '2', '2014-06-23 21:47:30', '0');
+INSERT INTO `log` VALUES ('44', 'makale', '', '2', '2014-06-23 21:48:27', '0');
+INSERT INTO `log` VALUES ('45', 'makale', '', '2', '2014-06-23 21:48:42', '0');
+INSERT INTO `log` VALUES ('46', 'makale', '', '2', '2014-06-23 21:52:07', '0');
+INSERT INTO `log` VALUES ('47', 'makale', '', '2', '2014-06-23 21:52:17', '0');
+INSERT INTO `log` VALUES ('48', 'makale', '', '2', '2014-06-23 21:52:46', '0');
+INSERT INTO `log` VALUES ('49', 'makale', '', '2', '2014-06-23 21:52:58', '0');
+INSERT INTO `log` VALUES ('50', 'makale', '', '2', '2014-06-23 22:11:01', '0');
+INSERT INTO `log` VALUES ('51', 'makale', '', '2', '2014-06-23 22:11:08', '0');
+INSERT INTO `log` VALUES ('52', 'makale', '', '2', '2014-06-23 22:37:06', '0');
+INSERT INTO `log` VALUES ('53', 'makale', '', '2', '2014-06-23 22:37:16', '0');
+INSERT INTO `log` VALUES ('54', 'makale', '', '2', '2014-06-23 22:38:00', '0');
+INSERT INTO `log` VALUES ('55', 'makale', '', '2', '2014-06-23 22:40:39', '0');
+INSERT INTO `log` VALUES ('56', 'makale', '', '2', '2014-06-23 22:42:01', '0');
+INSERT INTO `log` VALUES ('57', 'makale', '', '2', '2014-06-23 22:43:00', '0');
+INSERT INTO `log` VALUES ('58', 'makale', '', '2', '2014-06-23 22:44:09', '0');
+INSERT INTO `log` VALUES ('59', 'makale', '', '2', '2014-06-23 22:45:00', '0');
+INSERT INTO `log` VALUES ('60', 'makale', '', '2', '2014-06-23 22:45:11', '0');
+INSERT INTO `log` VALUES ('61', 'makale', '', '2', '2014-06-23 22:47:00', '0');
+INSERT INTO `log` VALUES ('62', 'makale', '', '2', '2014-06-23 22:47:19', '0');
+INSERT INTO `log` VALUES ('63', 'makale', '', '2', '2014-06-23 22:48:35', '0');
+INSERT INTO `log` VALUES ('64', 'makale', '', '2', '2014-06-23 22:49:12', '0');
+INSERT INTO `log` VALUES ('65', 'makale', '', '2', '2014-06-23 22:50:03', '0');
+INSERT INTO `log` VALUES ('66', 'makale', '', '2', '2014-06-23 22:52:27', '0');
+INSERT INTO `log` VALUES ('67', 'makale', '', '2', '2014-06-23 22:52:47', '0');
+INSERT INTO `log` VALUES ('68', 'anasayfa', '', null, '2014-06-23 22:52:57', '0');
+INSERT INTO `log` VALUES ('69', 'makale', '', '2', '2014-06-23 22:53:07', '0');
+INSERT INTO `log` VALUES ('70', 'makale', '', '4', '2014-06-23 22:53:46', '0');
+INSERT INTO `log` VALUES ('71', 'makale', '', '4', '2014-06-23 22:54:06', '0');
+INSERT INTO `log` VALUES ('72', 'makale', '', '4', '2014-06-23 22:54:30', '0');
+INSERT INTO `log` VALUES ('73', 'makale', '', '2', '2014-06-23 22:55:32', '0');
+INSERT INTO `log` VALUES ('74', 'makale', '', '2', '2014-06-23 22:57:37', '0');
+INSERT INTO `log` VALUES ('75', 'makale', '', '2', '2014-06-23 22:57:55', '0');
+INSERT INTO `log` VALUES ('76', 'makale', '', '2', '2014-06-23 22:58:29', '0');
+INSERT INTO `log` VALUES ('77', 'makale', '', '2', '2014-06-23 23:13:12', '0');
+INSERT INTO `log` VALUES ('78', 'makale', '', '2', '2014-06-23 23:14:11', '0');
+INSERT INTO `log` VALUES ('79', 'makale', '', '2', '2014-06-23 23:14:56', '0');
+INSERT INTO `log` VALUES ('80', 'makale', '', '2', '2014-06-23 23:15:34', '0');
+INSERT INTO `log` VALUES ('81', 'makale', '', '2', '2014-06-23 23:16:03', '0');
+INSERT INTO `log` VALUES ('82', 'makale', '', '2', '2014-06-23 23:16:14', '0');
+INSERT INTO `log` VALUES ('83', 'makale', '', '2', '2014-06-23 23:17:36', '0');
+INSERT INTO `log` VALUES ('84', 'makale', '', '4', '2014-06-23 23:19:15', '0');
+INSERT INTO `log` VALUES ('85', 'makale', '', '4', '2014-06-23 23:22:16', '0');
+INSERT INTO `log` VALUES ('86', 'makale', '', '4', '2014-06-23 23:25:14', '0');
+INSERT INTO `log` VALUES ('87', 'makale', '', '4', '2014-06-23 23:40:26', '0');
+INSERT INTO `log` VALUES ('88', 'makale', '', '4', '2014-06-23 23:40:56', '0');
+INSERT INTO `log` VALUES ('89', 'makale', '', '3', '2014-06-23 23:41:08', '0');
 
 -- ----------------------------
 -- Table structure for `makaleler`
@@ -191,7 +264,7 @@ CREATE TABLE `makaleler` (
 -- ----------------------------
 -- Records of makaleler
 -- ----------------------------
-INSERT INTO `makaleler` VALUES ('2', 'Herhangi bir konu hakkında ileri geri birkaç laf edesim var', 'Ufaktan anlatayım bari', '                    <p>\r\n                        There’s a reason I don’t write bad Yelp reviews or comment on shitty YouTube videos: I don’t believe in wasting words on things I don’t like. So why have I spent so much time and so many words on <em>Frozen</em>, a movie I openly loathed?\r\n                    </p>\r\n                    <p>\r\n                        <img src=\"inc/images/space_3.png\" style=\"width: 100%; height: 480px;\" />\r\n                    </p>\r\n                    <h2>\r\n                        Biraz daha yaz\r\n                    </h2>\r\n                    <p>\r\n                        In a recent DGA (Director’s Guild of America) “Women’s Steering Committee” meeting, the DGA resolved to “work diligently” to solve the problem of the gender imbalance in film. Everyone patted themselves on the back, declared the job mostly done and went home, except for the people <a target=\"_blank\" href=\"http://www.lexi-alexander.com/blog/2014/1/13/this-is-me-getting-real\">who pointed out</a> that the EEOC resolved to do exactly the same thing in <a target=\"_blank\" href=\"http://www.law.umaryland.edu/marshall/usccr/documents/cr12em712.pdf\">1978</a> — fourteen years after motion picture studios were found almost uniformly in violation of the Civil Rights Act of 1964. The state of the industry for women is absolutely abysmal, and has been for decades.\r\n                    </p>\r\n                    <h2>\r\n                        Bir daha çal Sam...\r\n                    </h2>\r\n                    <p>\r\n                        <img src=\"inc/images/space_5.png\" style=\"width: 100%;\" />\r\n                    </p>\r\n                    <p>\r\n                        <img src=\"inc/images/space_0.png\" style=\"width: 240px; height: 240px; float: left; margin-right: 12px;\" />\r\n                        There’s a reason I don’t write bad Yelp reviews or comment on shitty YouTube videos: I don’t believe in wasting words on things I don’t like. So why have I spent so much time and so many words on <em>Frozen</em>, a movie I openly loathed?\r\n                    </p>\r\n                    <h3>\r\n                        Bi siktir git Sam...\r\n                    </h3>\r\n                    <p>\r\n                        In a recent DGA (Director’s Guild of America) “Women’s Steering Committee” meeting, the DGA resolved to “work diligently” to solve the problem of the gender imbalance in film. Everyone patted themselves on the back, declared the job mostly done and went home, except for the people <a target=\"_blank\" href=\"http://www.lexi-alexander.com/blog/2014/1/13/this-is-me-getting-real\">who pointed out</a> that the EEOC resolved to do exactly the same thing in <a target=\"_blank\" href=\"http://www.law.umaryland.edu/marshall/usccr/documents/cr12em712.pdf\">1978</a> — fourteen years after motion picture studios were found almost uniformly in violation of the Civil Rights Act of 1964. The state of the industry for women is absolutely abysmal, and has been for decades.\r\n                    </p>\r\n\r', 'Bu da tren', '2014-06-17 00:00:00', '1', '1', '0', 'herhangi-bir-konu-hakkında-ileri-geri-birkaç-laf-edesim-var', 'makale.html', '1', '1');
+INSERT INTO `makaleler` VALUES ('2', 'Herhangi bir konu hakkında ileri geri birkaç laf edesim var', 'Ufaktan anlatayım bari', '<p>There&rsquo;s a reason I don&rsquo;t write bad Yelp reviews or comment on shitty YouTube videos: I don&rsquo;t believe in wasting words on things I don&rsquo;t like. So why have I spent so much time and so many words on <em>Frozen</em>, a movie I openly loathed?</p>\r\n<p><img style=\"width: 100%; height: 480px;\" src=\"inc/images/space_3.png\" alt=\"\" /></p>\r\n<h2>Biraz daha yaz</h2>\r\n<p>In a recent DGA (Director&rsquo;s Guild of America) &ldquo;Women&rsquo;s Steering Committee&rdquo; meeting, the DGA resolved to &ldquo;work diligently&rdquo; to solve the problem of the gender imbalance in film. Everyone patted themselves on the back, declared the job mostly done and went home, except for the people <a href=\"http://www.lexi-alexander.com/blog/2014/1/13/this-is-me-getting-real\" target=\"_blank\">who pointed out</a> that the EEOC resolved to do exactly the same thing in <a href=\"http://www.law.umaryland.edu/marshall/usccr/documents/cr12em712.pdf\" target=\"_blank\">1978</a> &mdash; fourteen years after motion picture studios were found almost uniformly in violation of the Civil Rights Act of 1964. The state of the industry for women is absolutely abysmal, and has been for decades.</p>\r\n<h2>Bir daha &ccedil;al Sam...</h2>\r\n<p><img style=\"width: 100%;\" src=\"inc/images/space_5.png\" alt=\"\" /></p>\r\n<p><img style=\"width: 240px; height: 240px; float: left; margin-right: 12px;\" src=\"inc/images/space_0.png\" alt=\"\" /> There&rsquo;s a reason I don&rsquo;t write bad Yelp reviews or comment on shitty YouTube videos: I don&rsquo;t believe in wasting words on things I don&rsquo;t like. So why have I spent so much time and so many words on <em>Frozen</em>, a movie I openly loathed?</p>\r\n<h3>Bi siktir git Sam...</h3>\r\n<p>In a recent DGA (Director&rsquo;s Guild of America) &ldquo;Women&rsquo;s Steering Committee&rdquo; meeting, the DGA resolved to &ldquo;work diligently&rdquo; to solve the problem of the gender imbalance in film. Everyone patted themselves on the back, declared the job mostly done and went home, except for the people <a href=\"http://www.lexi-alexander.com/blog/2014/1/13/this-is-me-getting-real\" target=\"_blank\">who pointed out</a> that the EEOC resolved to do exactly the same thing in <a href=\"http://www.law.umaryland.edu/marshall/usccr/documents/cr12em712.pdf\" target=\"_blank\">1978</a> &mdash; fourteen years after motion picture studios were found almost uniformly in violation of the Civil Rights Act of 1964. The state of the industry for women is absolutely abysmal, and has been for decades.</p>', 'Bu da tren', '2014-06-17 00:00:00', '1', '1', '0', 'herhangi-bir-konu-hakkında-ileri-geri-birkaç-laf-edesim-var', 'makale.html', '1', '1');
 INSERT INTO `makaleler` VALUES ('3', 'Hakan Özakar', 'Deneme', '<p>Değişik bir bakış a&ccedil;ısı ile&nbsp;veri tabanında normalizasyon...</p>\r\n<h2>Neden normalizasyona ihtiya&ccedil; duyayım?</h2>\r\n<pre class=\"brush: sql\">SELECT\r\n    diller.baslik\r\nFROM\r\n    konubasliklari\r\n    INNER JOIN\r\n        diller ON konubasliklari.dil = diller.id\r\nWHERE\r\n    diller.dilkod = \'tr\'</pre>', 'Deneme', '2014-06-20 00:00:00', '1', '1', '0', 'hakan-özakar', 'makale-kod-icerikli.html', '1', '1');
 INSERT INTO `makaleler` VALUES ('4', 'Hakan Boş', 'Deneme', '<pre class=\"brush: js ; html-script: true\">&lt;div&gt;Hakan &Ouml;zakar&lt;/div&gt;\r\n&lt;script&gt;\r\n&nbsp; &nbsp; alert(\'\');\r\n&lt;/script&gt;</pre>\r\n<pre class=\"brush: xml\">!!Kod Buraya!!</pre>\r\n<p>&nbsp;</p>\r\n<pre class=\"brush: sql\">SELECT * \r\nFROM\r\n    tablo1\r\nINNER JOIN\r\n    tablo2\r\n    ON tablo1.id = tablo2.tid</pre>\r\n<p>&nbsp;</p>\r\n<pre class=\"brush: php ; html-script: true\">&lt;div class=\"&lt;?=$sitebilgi[\'class\']?&gt;\"&gt;\r\n    &lt;?=$sitebilgi[\'isim\']?&gt;\r\n&lt;/div&gt;</pre>', 'Deneme', '2014-06-20 00:00:00', '1', '1', '0', 'hakan-boş', 'makale-kod-icerikli.html', '0', '1');
 
@@ -269,7 +342,6 @@ DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mid` int(11) NOT NULL,
-  `yid` int(11) DEFAULT NULL,
   `yorum` varchar(1000) DEFAULT NULL,
   `isim` varchar(255) DEFAULT NULL,
   `eposta` varchar(255) DEFAULT NULL,
@@ -278,13 +350,11 @@ CREATE TABLE `yorumlar` (
   `aktif` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mid` (`mid`),
-  KEY `yid` (`yid`),
   KEY `tarih` (`tarih`),
-  CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `yorumlar_ibfk_2` FOREIGN KEY (`yid`) REFERENCES `yorumlar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of yorumlar
 -- ----------------------------
-INSERT INTO `yorumlar` VALUES ('1', '2', null, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hakan@beltslib.net', 'http://beltslib.net', '2014-06-17 00:02:25', '0');
+INSERT INTO `yorumlar` VALUES ('1', '2', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.', 'Hakan', 'hakan@beltslib.net', 'http://beltslib.net', '2014-06-17 00:02:25', '1');

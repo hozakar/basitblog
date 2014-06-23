@@ -104,6 +104,9 @@ class site {
             case 'sosyal':
                 $this->sosyal($kod);
                 break;
+            case 'makalegaleri':
+                $this->makalegaleri($kod, $param[0], $param[1]);
+                break;
             case 'oncekisayfa':
                 echo $this->sayfa('onceki', $param[0], $param[1]);
                 break;
@@ -233,13 +236,32 @@ class site {
         while($rec = $rs->fetch_array()) $this->donguicerik($rec, $kod);
     }
 
+    private function makalegaleri($kod, $ilk, $sayi) {
+        $sql = "
+            SELECT
+                CONCAT('".$this->sb['anadizin']."upload/foto/minik/', id, uzanti) as minik,
+                CONCAT('".$this->sb['anadizin']."upload/foto/normal/', id, uzanti) as normal,
+                CONCAT('".$this->sb['anadizin']."upload/foto/buyuk/', id, uzanti) as buyuk
+            FROM foto 
+            WHERE 
+                mid = ".$this->url['id']."
+            ORDER BY sira
+        ";
+
+        if($ilk && $sayi) {
+            $sql .= " LIMIT ".$ilk.", ".$sayi;
+        }
+
+        $rs = $this->db->query($sql);
+        while($rec = $rs->fetch_array()) $this->donguicerik($rec, $kod);
+    }
+
     private function yorum($kod) {
         $sql = "
             SELECT *, tarih as tarihsaat, eposta as gravatar
             FROM yorumlar
             WHERE 
                 mid = ".$this->url['id']."
-                AND ISNULL(yid)
                 AND aktif
             ORDER BY tarih DESC
         ";

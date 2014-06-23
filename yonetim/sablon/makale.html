@@ -32,6 +32,8 @@
 		
 		<title>[[sayfabilgi((baslik))]]</title>
 
+        <!-- Lightbox -->
+	    <link rel="stylesheet" href="[[sitebilgi((anadizin))]]inc/js/lightbox/css/lightbox.css">
 		<!-- Bootstrap CSS -->
 		<link href="[[sitebilgi((anadizin))]]inc/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Font Awesome CSS -->
@@ -124,10 +126,25 @@
         <div class="container makale">
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-
                     <span class="tarih">[[sayfabilgi((tarih))]]<br>[[sayfabilgi((yazar))]]</span>
                     <br>
                     [[sayfabilgi((icerik))]]
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <ul class="fotogaleri">
+                        [[makalegaleri((1,999)){{
+                            <li>
+                                <div class="gfoto">
+                                    <a href="[@=buyuk@]" data-lightbox="galeri">
+                                        <img src="[@=minik@]" alt="Galeri Foto" />
+                                    </a>
+                                </div>
+                            </li>
+                        }}]]
+                    </ul>
                 </div>
             </div>
 
@@ -205,15 +222,21 @@
         [[ekle((eklemeler/altbar.html))]]
 
 		<!-- Genel JavaScript Dosyaları -->
-		<script src="inc/js/bootstrap.min.js"></script>
-		<script src="inc/js/imgfix.min.js"></script>
-		<script src="inc/js/sscr.js"></script>
-        <script src="inc/js/sol-menu.min.js"></script>
-		<!-- Özel JS Dosyaları -->
+		<script src="[[sitebilgi((anadizin))]]inc/js/bootstrap.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/imgfix.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/sscr.js"></script>
+        <script src="[[sitebilgi((anadizin))]]inc/js/sol-menu.min.js"></script>
+		<!-- Lightbox -->
+    	<script src="[[sitebilgi((anadizin))]]inc/js/lightbox/js/lightbox.min.js"></script>
+        <!-- Özel JS Dosyaları -->
 		<script src="inc/js/genel.min.js"></script>
         <script>
             $('.sol-menu').solMenu();
             $('.bar-bg').imgfix();
+            $('.gfoto').imgfix({
+                scale: 1.125,
+                height: '75%'
+            });
         </script>
 	</body>
 </html>

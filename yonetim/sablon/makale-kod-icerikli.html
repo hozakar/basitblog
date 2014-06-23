@@ -32,6 +32,8 @@
 		
 		<title>[[sayfabilgi((baslik))]]</title>
 
+        <!-- Lightbox -->
+	    <link rel="stylesheet" href="[[sitebilgi((anadizin))]]inc/js/lightbox/css/lightbox.css">
 		<!-- Bootstrap CSS -->
 		<link href="[[sitebilgi((anadizin))]]inc/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Font Awesome CSS -->
@@ -134,6 +136,22 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <ul class="fotogaleri">
+                        [[makalegaleri((1,999)){{
+                            <li>
+                                <div class="gfoto">
+                                    <a href="[@=buyuk@]" data-lightbox="galeri">
+                                        <img src="[@=minik@]" alt="Galeri Foto" />
+                                    </a>
+                                </div>
+                            </li>
+                        }}]]
+                    </ul>
+                </div>
+            </div>
+
             <div class="row alt-bilgi paylas">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-right">
                     <a href="[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Twitter'da Paylaş"><i class="fa fa-2x fa-twitter-square"></i></a>
@@ -212,7 +230,8 @@
 		<script src="inc/js/imgfix.min.js"></script>
 		<script src="inc/js/sscr.js"></script>
         <script src="inc/js/sol-menu.min.js"></script>
-
+		<!-- Lightbox -->
+    	<script src="[[sitebilgi((anadizin))]]inc/js/lightbox/js/lightbox.min.js"></script>
 		<!-- Özel JS Dosyaları -->
 		<script src="inc/js/genel.min.js"></script>
 
@@ -232,6 +251,10 @@
         <script>
             $('.sol-menu').solMenu();
             $('.bar-bg').imgfix();
+            $('.gfoto').imgfix({
+                scale: 1.125,
+                height: '75%'
+            });
         </script>
 	</body>
 </html>
