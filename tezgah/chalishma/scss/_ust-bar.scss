@@ -73,9 +73,14 @@
         bottom: -60px;
         margin: auto;
         border-radius: 50%;
-        background: url(../images/avatar.png);
         border: 5px solid #fff;
         box-shadow: 0px 0px 4px rgba(0,0,0,.3);
+        background: white;
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
     }
     .sayfa-baslik {
         color: #fff;

@@ -2,7 +2,12 @@
 session_start();
 error_reporting(0);
 
-include('vtbilgi.php');
+if(file_exists(getDir().'vtbilgi.php')) {
+    include('vtbilgi.php');
+} else {
+    header('location: /yonetim/kur.php');
+    return;
+}
 
 $slashkullan = TRUE;
 

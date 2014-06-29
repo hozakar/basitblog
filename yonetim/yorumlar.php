@@ -89,8 +89,8 @@
                 ?>
                         <tr>
                             <td class="text-muted xs-kapat"><?php echo date($sb['tarihsaatformat'], strtotime($row['tarih']));?></td>
-                            <td><span class="liste-uzun-metin"><?php echo htmlspecialchars($row['yorum']);?></span></td>
-                            <td class="xs-kapat"><?php echo htmlspecialchars($row['isim']);?></td>
+                            <td><span class="liste-uzun-metin"><?php echo sql_filtre(htmlspecialchars($row['yorum']), TRUE);?></span></td>
+                            <td class="xs-kapat"><?php echo sql_filtre(htmlspecialchars($row['isim']));?></td>
                             <td class="text-right">
                                 <?php   if($_GET['sayfa'] == 'yorumlar') {?>
                                             <a href="?sayfa=makale&id=<?php echo $row['mid'];?>" class="btn btn-xs btn-warning" data-toggle="tooltip" data-placement="top" title="İlgili Makaleyi Aç"><i class="fa fa-link"></i></a>

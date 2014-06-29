@@ -44,6 +44,14 @@
         }
     }
 
+    /* Grafik */
+    .grafik {
+        width: 100%;
+        height: 270px;
+        ul { display: none; }
+    }
+    /* Son: Grafik */
+
     /* Uzun Metin Ellipsis */
     .liste-uzun-metin {
         white-space: nowrap;

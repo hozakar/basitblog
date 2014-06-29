@@ -49,6 +49,9 @@
 		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+        <!-- Google Analytics İzleme Kodu -->
+        <!-- Son:Google Analytics İzleme Kodu -->
 	</head>
 	<body>
         
@@ -56,18 +59,20 @@
 
         <!-- Üst Bar -->
         <div class="ust-bar">
-            <div class="bar-bg" data-fix-img="[[sitebilgi((anadizin))]][[sitebilgi((foto))]]"></div>
+            <div class="bar-bg" data-fix-img="[[sitebilgi((foto))]]"></div>
             <div class="menu-bar">
                 <div class="menu-buton">
                     <i class="fa fa-2x fa-bars"></i>
                 </div>
                 <div class="sosyal">
                     [[sosyal(()){{
-                        <a href="[@=fullurl@]" data-color="[@=renk@]" data-hover-color="[@=hoverrenk@]"><i class="fa [@=ikon@]"></i></a>
+                        <a href="[@=fullurl@]" data-color="[@=renk@]" data-hover-color="[@=hoverrenk@]" target="_blank"><i class="fa fa-[@=ikon@]"></i></a>
                     }}]]
                 </div>
             </div>
-            <div class="avatar"></div>
+            <div class="avatar">
+                <img src="[[sitebilgi((gravatar))]]" alt="avatar" />
+            </div>
             <div class="sayfa-baslik container">
                 <div class="row">
                     <h1 class="col-xs-10 col-sm-8 col-sm-offset-2">

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /inc/
+Disallow: /tezgah/
+Disallow: /upload/
+Disallow: /yonetim/
+Disallow: /*.php

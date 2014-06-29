@@ -73,5 +73,11 @@ function s_addslashes($gelen) {
     if($slashkullan) $gelen = addslashes($gelen);
     return $gelen;
 }
-?>
 
+function sql_filtre($gelen, $reverse = FALSE) {
+    $filtre = explode(',', '*,SELECT,UPDATE,DELETE,INSERT,INTO,VALUE,FROM,LEFT,RIGHT,INNER,JOIN,WHERE,LIMIT,ORDER,CREATE');
+    $son = explode(',', '*|,S|ELECT,U|PDATE,D|ELETE,I|NSERT,I|NTO,V|ALUE,F|ROM,L|EFT,R|IGHT,I|NNER,J|OIN,W|HERE,L|IMIT,O|RDER,C|REATE');
+    $gelen = $reverse ? str_ireplace($son, $filtre, $gelen) : str_ireplace($filtre, $son, $gelen);
+    return $gelen;
+}
+?>

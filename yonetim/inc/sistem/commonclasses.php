@@ -25,7 +25,8 @@ class site {
             SELECT
                 makaleler.*, 
                 kullanicilar.isim as yazar, 
-                kullanicilar.eposta as yazarposta
+                kullanicilar.eposta as yazarposta,
+                kullanicilar.eposta as gravatar
             FROM 
                 makaleler 
             INNER JOIN kullanicilar 
@@ -135,7 +136,10 @@ class site {
     }
 
     private function sitebilgi($alan) {
-        return $this->sb[$alan];
+        $deger = $this->sb[$alan];
+        if($alan == 'foto' && strpos($deger, '://') == -1) $deger = $this->sb['anadizin'].$deger;
+        if($alan == 'gravatar') $deger = "http://www.gravatar.com/avatar/".md5(strtolower(trim($this->sb['yazarposta'])))."?s=120";
+        return $deger;
     }
 
     private function sayfabilgi($alan) {
@@ -315,10 +319,10 @@ class site {
                 $deger = $this->sb['anadizin'].$deger.'.html';
                 break;
             case 'gravatar':
-                $deger = "http://www.gravatar.com/avatar/".md5(strtolower(trim($deger)))."&s=50";
+                $deger = "http://www.gravatar.com/avatar/".md5(strtolower(trim($deger)))."?s=120";
                 break;
         }
-        return $deger;
+        return sql_filtre($deger, TRUE);
     }
 
     private function sayfa($yon, $tip, $sayfasayi) {

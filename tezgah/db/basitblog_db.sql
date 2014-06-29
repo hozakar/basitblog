@@ -1,5 +1,4 @@
 SET FOREIGN_KEY_CHECKS=0;
-
 DROP TABLE IF EXISTS `etiketgruplari`;
 CREATE TABLE `etiketgruplari` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -146,13 +145,10 @@ CREATE TABLE `sosyal` (
   CONSTRAINT `sosyal_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of sosyal
--- ----------------------------
-INSERT INTO `sosyal` VALUES ('1', 'GitHub', 'http://github.com', 'fa-github', 'black', 'white', '1', '0');
-INSERT INTO `sosyal` VALUES ('2', 'Twitter', 'http://twitter.com', 'fa-twitter', '#00ABF0', 'white', '1', '1');
-INSERT INTO `sosyal` VALUES ('3', 'Facebook', 'http://facebook.com', 'fa-facebook', '#3C599F', 'white', '1', '2');
-INSERT INTO `sosyal` VALUES ('4', 'RSS', 'http://beltslib.net/rss/', 'fa-rss', '#FEA501', 'white', '1', '3');
+INSERT INTO `sosyal` VALUES ('1', 'Twitter', 'http://twitter.com/', 'twitter', '#00abf0', '#ffffff', '1', '0');
+INSERT INTO `sosyal` VALUES ('2', 'Facebook', 'http://facebook.com/', 'facebook', '#3c599f', '#ffffff', '1', '1');
+INSERT INTO `sosyal` VALUES ('3', 'Google+', 'http://plus.google.com/', 'google-plus', '#f03f27', '#ffffff', '1', '2');
+INSERT INTO `sosyal` VALUES ('4', 'RSS', '/rss.xml', 'rss', '#fea501', '#ffffff', '1', '3');
 
 DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (

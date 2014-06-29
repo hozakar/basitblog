@@ -11,5 +11,7 @@ RewriteRule ^sayfa/(.*)/$ index.php?sayfa=$1
 
 RewriteRule ^index.html$ index.php
 RewriteRule ^/$ index.php
+RewriteRule ^sitemap.xml$ sitemap.php
+RewriteRule ^rss.xml$ rss.php
 
 RewriteRule ^(.*).html$ index.php?url=$1 [QSA]

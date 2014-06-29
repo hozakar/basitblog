@@ -39,7 +39,7 @@
                     </style>
         <?php   }?>
 
-        <?php   if($_GET['sayfa'] == 'etiketler') {?>
+        <?php   if($_GET['sayfa'] == 'etiketler' || $_GET['sayfa'] == 'ayarlar') {?>
                     <!-- bootstrap colorpicker -->
                     <link href="inc/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
         <?php   }?>
@@ -203,9 +203,14 @@
                     </script>
         <?php   }?>
 
-        <?php   if($_GET['sayfa'] == 'etiketler') {?>
+        <?php   if($_GET['sayfa'] == 'etiketler' || $_GET['sayfa'] == 'ayarlar') {?>
                     <!-- bootstrap colorpicker -->
                     <script src="inc/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <?php   }?>
+
+        <?php   if(!$_GET['sayfa']) {?>
+                    <script src="inc/highcharts/highcharts.js"></script>
+                    <script src="inc/highcharts/exporting.js"></script>
         <?php   }?>
 
 		<!-- Özel JS Dosyaları -->

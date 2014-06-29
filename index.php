@@ -1,5 +1,21 @@
 <?php
     include("yonetim/inc/sistem/functions.php");
+
+    if($_POST['yorum']) {
+        $mid = current($db->query("SELECT id FROM makaleler WHERE url = '$_REQUEST[url]'")->fetch_row());
+        if($mid) {
+            $db->query("INSERT INTO yorumlar (mid, yorum, isim, eposta, web) VALUES(
+                $mid,
+                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['yorum'])))."',
+                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['isim'])))."',
+                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['eposta'])))."',
+                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['web'])))."'
+            )");
+        }
+        header('location: '.$site->sb['anadizin'].$_REQUEST['url'].'.html');
+        return;
+    }
+
     if($_REQUEST['url']) {
         $site->makale($_REQUEST['url']);
         $dosya = getDir('index.php')."yonetim\\sablon\\".$site->url['sablon'];

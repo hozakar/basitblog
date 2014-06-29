@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ikonlar>
+    <ikon>
+        <isim>behance</isim>
+        <sablon>Behance</sablon>
+    </ikon>
+    <ikon>
+        <isim>behance-square</isim>
+        <sablon>Behance (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>bitbucket</isim>
+        <sablon>BitBucket</sablon>
+    </ikon>
+    <ikon>
+        <isim>bitbucket-square</isim>
+        <sablon>BitBucket (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>codepen</isim>
+        <sablon>Codepen</sablon>
+    </ikon>
+    <ikon>
+        <isim>delicious</isim>
+        <sablon>Delicious</sablon>
+    </ikon>
+    <ikon>
+        <isim>deviantart</isim>
+        <sablon>DeviantART</sablon>
+    </ikon>
+    <ikon>
+        <isim>digg</isim>
+        <sablon>Digg</sablon>
+    </ikon>
+    <ikon>
+        <isim>dribbble</isim>
+        <sablon>Dribble</sablon>
+    </ikon>
+    <ikon>
+        <isim>facebook</isim>
+        <sablon>Facebook</sablon>
+    </ikon>
+    <ikon>
+        <isim>facebook-square</isim>
+        <sablon>Facebook (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>flickr</isim>
+        <sablon>Flickr</sablon>
+    </ikon>
+    <ikon>
+        <isim>foursquare</isim>
+        <sablon>Foursquare</sablon>
+    </ikon>
+    <ikon>
+        <isim>github</isim>
+        <sablon>GitHub</sablon>
+    </ikon>
+    <ikon>
+        <isim>github-alt</isim>
+        <sablon>GitHub (Alt)</sablon>
+    </ikon>
+    <ikon>
+        <isim>github-square</isim>
+        <sablon>GitHub (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>google-plus</isim>
+        <sablon>Google+</sablon>
+    </ikon>
+    <ikon>
+        <isim>google-plus-square</isim>
+        <sablon>Google+ (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>instagram</isim>
+        <sablon>Instagram</sablon>
+    </ikon>
+    <ikon>
+        <isim>jsfiddle</isim>
+        <sablon>JSFiddle</sablon>
+    </ikon>
+    <ikon>
+        <isim>linkedin</isim>
+        <sablon>LinkedIn</sablon>
+    </ikon>
+    <ikon>
+        <isim>linkedin-square</isim>
+        <sablon>LinkedIn (kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>openid</isim>
+        <sablon>OpenID</sablon>
+    </ikon>
+    <ikon>
+        <isim>pagelines</isim>
+        <sablon>PageLines</sablon>
+    </ikon>
+    <ikon>
+        <isim>pinterest</isim>
+        <sablon>Pinterest</sablon>
+    </ikon>
+    <ikon>
+        <isim>pinterest-square</isim>
+        <sablon>Pinterest (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>reddit</isim>
+        <sablon>Reddit</sablon>
+    </ikon>
+    <ikon>
+        <isim>reddit-square</isim>
+        <sablon>Reddit (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>rss</isim>
+        <sablon>RSS</sablon>
+    </ikon>
+    <ikon>
+        <isim>rss-square</isim>
+        <sablon>RSS (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>skype</isim>
+        <sablon>Skype</sablon>
+    </ikon>
+    <ikon>
+        <isim>soundcloud</isim>
+        <sablon>SoundCloud</sablon>
+    </ikon>
+    <ikon>
+        <isim>spotify</isim>
+        <sablon>Spotify</sablon>
+    </ikon>
+    <ikon>
+        <isim>stack-exchange</isim>
+        <sablon>StackExchange</sablon>
+    </ikon>
+    <ikon>
+        <isim>stack-overflow</isim>
+        <sablon>stackoverflow</sablon>
+    </ikon>
+    <ikon>
+        <isim>stumbleupon</isim>
+        <sablon>StumbleUpon</sablon>
+    </ikon>
+    <ikon>
+        <isim>stumbleupon-circle</isim>
+        <sablon>StumbleUpon (Daire)</sablon>
+    </ikon>
+    <ikon>
+        <isim>tumblr</isim>
+        <sablon>Tumblr</sablon>
+    </ikon>
+    <ikon>
+        <isim>tumblr-square</isim>
+        <sablon>Tumblr (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>twitter</isim>
+        <sablon>Twitter</sablon>
+    </ikon>
+    <ikon>
+        <isim>twitter-square</isim>
+        <sablon>Twitter (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>vimeo-square</isim>
+        <sablon>Vimeo</sablon>
+    </ikon>
+    <ikon>
+        <isim>vine</isim>
+        <sablon>Vine</sablon>
+    </ikon>
+    <ikon>
+        <isim>wechat</isim>
+        <sablon>WeChat</sablon>
+    </ikon>
+    <ikon>
+        <isim>xing</isim>
+        <sablon>XING</sablon>
+    </ikon>
+    <ikon>
+        <isim>xing-square</isim>
+        <sablon>XING (Kare)</sablon>
+    </ikon>
+    <ikon>
+        <isim>youtube</isim>
+        <sablon>YouTube</sablon>
+    </ikon>
+    <ikon>
+        <isim>youtube-play</isim>
+        <sablon>YouTube (Play)</sablon>
+    </ikon>
+    <ikon>
+        <isim>youtube-square</isim>
+        <sablon>YouTube (Kare)</sablon>
+    </ikon>
+</ikonlar>

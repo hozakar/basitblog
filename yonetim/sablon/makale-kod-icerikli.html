@@ -57,6 +57,9 @@
 		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+        <!-- Google Analytics İzleme Kodu -->
+        <!-- Son:Google Analytics İzleme Kodu -->
 	</head>
 	<body>
         
@@ -65,28 +68,28 @@
         <!-- Modal Form -->
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <form class="modal-content form">
+                <form class="modal-content form" method="post">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="modalLabel">Yorum Yap</h4>
                     </div>
                     <div class="modal-body">
-                            <div class="row form-group">
-                                <div class="col-xs-12 col-sm-4">
-                                    <input type="text" class="form-control" placeholder="İsim" />
-                                </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <input type="email" class="form-control" placeholder="E-Posta" />
-                                </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <input type="url" class="form-control" placeholder="Web" />
-                                </div>
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="text" class="form-control" name="isim" required placeholder="İsim" />
                             </div>
-                            <div class="row form-group margin-bottom-yok">
-                                <div class="col-xs-12">
-                                    <textarea placeholder="Yorumunuz" class="form-control"></textarea>
-                                </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="email" class="form-control" name="eposta" placeholder="E-Posta" />
                             </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="url" class="form-control" name="web" placeholder="Web" />
+                            </div>
+                        </div>
+                        <div class="row form-group margin-bottom-yok">
+                            <div class="col-xs-12">
+                                <textarea placeholder="Yorumunuz" class="form-control" name="yorum" required></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Vazgeç</button>
@@ -106,11 +109,13 @@
                 </div>
                 <div class="sosyal">
                     [[sosyal(()){{
-                        <a href="[@=fullurl@]" data-color="[@=renk@]" data-hover-color="[@=hoverrenk@]"><i class="fa [@=ikon@]"></i></a>
+                        <a href="[@=fullurl@]" data-color="[@=renk@]" data-hover-color="[@=hoverrenk@]" target="_blank"><i class="fa fa-[@=ikon@]"></i></a>
                     }}]]
                 </div>
             </div>
-            <div class="avatar"></div>
+            <div class="avatar">
+                <img src="[[sayfabilgi((gravatar))]]" alt="avatar" />
+            </div>
             <div class="sayfa-baslik container">
                 <div class="row">
                     <h1 class="col-xs-10 col-sm-8 col-sm-offset-2">

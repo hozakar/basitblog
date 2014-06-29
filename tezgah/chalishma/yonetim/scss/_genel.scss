@@ -66,3 +66,11 @@ h1, h2, h3, h4 {
     }
 }
 /* Son: Mobil boyutunda kapanacak elementler */
+
+/* Orta boyutta kapanacak elementler */
+@media (max-width: 991px) {
+    .md-kapat {
+        display: none !important;
+    }
+}
+/* Son: Orta boyutta kapanacak elementler */
