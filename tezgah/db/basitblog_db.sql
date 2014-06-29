@@ -143,12 +143,7 @@ CREATE TABLE `sosyal` (
   PRIMARY KEY (`id`),
   KEY `sid` (`sid`),
   CONSTRAINT `sosyal_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
-INSERT INTO `sosyal` VALUES ('1', 'Twitter', 'http://twitter.com/', 'twitter', '#00abf0', '#ffffff', '1', '0');
-INSERT INTO `sosyal` VALUES ('2', 'Facebook', 'http://facebook.com/', 'facebook', '#3c599f', '#ffffff', '1', '1');
-INSERT INTO `sosyal` VALUES ('3', 'Google+', 'http://plus.google.com/', 'google-plus', '#f03f27', '#ffffff', '1', '2');
-INSERT INTO `sosyal` VALUES ('4', 'RSS', '/rss.xml', 'rss', '#fea501', '#ffffff', '1', '3');
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
