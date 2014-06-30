@@ -93,6 +93,11 @@
                         <button type="submit" class="btn btn-primary">Kaydet</button>
                     </div>
                 </form>
+                <div class="yorumok">
+                    <h2 class="text-center">
+                        Yorumunuz En Kısa Sürede Yayınlanacaktır.<br><br>Teşekkürler.
+                    </h2>
+                </div>
             </div>
         </div>
         <!-- Son: Modal Form -->
@@ -241,6 +246,17 @@
             $('.gfoto').imgfix({
                 scale: 1.125,
                 height: '75%'
+            });
+            $('form').submit(function () {
+                alert('');
+                if ($(this).data('submit') != 'ok') {
+                    $('.yorumok').fadeToggle(200);
+                    setTimeout(function () {
+                        $('form').data('submit', 'ok');
+                        $('form').submit();
+                    }, 1000);
+                    return false;
+                }
             });
         </script>
 	</body>

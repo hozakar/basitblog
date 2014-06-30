@@ -250,7 +250,6 @@
                 ");
                 $durum = ($hoy ? 'tamam' : 'baglanti_hata');
             }
-            $db->close();
         }
     } else {
         if(file_exists(getDir().'inc/sistem/vtbilgi.php')) {
@@ -403,46 +402,55 @@
                                 <input type="hidden" name="islem" value="sitebilgi" />
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Site İsmi</label>
                                         <input name="isim" required class="form-control" placeholder="Site İsmi" value="<?php echo $rs['isim'];?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Açıklama</label>
                                         <input name="aciklama" class="form-control" placeholder="Açıklama" value="" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Anahtar Kelimeler</label>
                                         <input name="keywords" class="form-control" placeholder="Anahtar Kelimeler" value="" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Site Adresi</label>
                                         <input name="url" type="url" required class="form-control" placeholder="Site Adresi" value="<?php echo $rs['url'];?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Site Başlığı</label>
                                         <input name="baslik" class="form-control" placeholder="Site Başlığı" value="<?php echo $rs['baslik'];?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Ana Sayfa Başlığı</label>
                                         <input name="asbaslik" class="form-control" placeholder="Ana Sayfa Başlığı" value="<?php echo $rs['asbaslik'];?>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Ana Sayfa Alt Başlığı</label>
                                         <input name="asaltbaslik" class="form-control" placeholder="Ana Sayfa Alt Başlığı" value="" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Site Yazarı</label>
                                         <input name="yazar" required class="form-control" placeholder="Site Yazarı" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Yazar E-Posta</label>
                                         <input name="yazarposta" type="email" required class="form-control" placeholder="Yazar E-Posta" />
                                     </div>
                                 </div>
@@ -455,6 +463,7 @@
                     <?php
                             $db->close();
                         } elseif($durum == 'tamam') {
+                            $_SESSION['user'] = $db->query("SELECT * FROM kullanicilar WHERE id = 1")->fetch_assoc();
                     ?>
                             <h1 class="text-center">
                                 Basit Blog Kurulumu<br>
@@ -464,7 +473,7 @@
                                 Lütfen siteniz ile ilgili detaylı ayarlamaları <strong>Yönetim Panelinde Site Bilgileri</strong> sayfasından yapınız.<br><br>
                             </p>
 
-                            <a href="/yonetim/" class="btn btn-success" style="width: 100%;">KULLANMAYA BAŞLA</a>
+                            <a href="/yonetim/?sayfa=ayarlar" class="btn btn-success" style="width: 100%;">KULLANMAYA BAŞLA</a>
                     <?php
                         }
                     ?>
