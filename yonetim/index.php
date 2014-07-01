@@ -164,11 +164,15 @@
                             selector: ".icerik",
                             language : 'tr_TR',
                             content_css : "<?php $site->sbyaz('anadizin')?>inc/css/stil.min.css?date<?php echo date('YmdHis');?>",
-                            plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons syntaxhighlighter',
+                            plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons syntaxhighlighter imagebrowser',
                             menubar: false,
                             toolbar: [
-                                "code | undo redo | style-h2 style-h3 | syntaxhighlighter | bold italic underline strikethrough | forecolor | blockquote | link image | alignleft aligncenter alignright alignjustify | table | searchreplace"
-                            ]
+                                "code | undo redo | style-h2 style-h3 | syntaxhighlighter | bold italic underline strikethrough | forecolor | blockquote | link imagebrowser | alignleft aligncenter alignright alignjustify | table | searchreplace"
+                            ],
+                            imagebrowser: {
+                                root: "/inc/images/",
+                                overwrite: false
+                            }
                         });
                     </script>
 
