@@ -1,4 +1,14 @@
 <?php
+/*
+**  Basit Blog 1.0.0
+**  https://github.com/hozakar/basitblog
+**
+**  Copyright 2014, Hakan Özakar
+**  http://beltslib.net
+**
+**  CC0 1.0 Universal Licence ile lisanslanmıştır
+**  https://creativecommons.org/publicdomain/zero/1.0/
+*/
     include("yonetim/inc/sistem/functions.php");
 
     if($_POST['yorum']) {
