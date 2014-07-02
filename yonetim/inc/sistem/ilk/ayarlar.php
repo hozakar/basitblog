@@ -30,7 +30,8 @@
                 postakullanici  = '".s_addslashes($_POST['postakullanici'])."',
                 postasifre      = '".s_addslashes($_POST['postasifre'])."',
                 postaport       = '".s_addslashes($_POST['postaport'])."',
-                postaauth       = ".(intval($_POST['postaauth']) > 0 ? intval($_POST['postaauth']) : 0)."
+                postaauth       = ".(intval($_POST['postaauth']) > 0 ? intval($_POST['postaauth']) : 0).",
+                g_analytics     = '".s_addslashes($_POST['g_analytics'])."'
             WHERE id = $_POST[id]");
     }
 

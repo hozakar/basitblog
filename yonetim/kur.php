@@ -56,6 +56,7 @@
                       `postasifre` varchar(255) DEFAULT NULL,
                       `postaport` varchar(255) DEFAULT NULL,
                       `postaauth` tinyint(4) NOT NULL DEFAULT '1',
+                      `g_analytics` text,
                       `aktif` tinyint(4) NOT NULL DEFAULT '0',
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

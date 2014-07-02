@@ -291,10 +291,7 @@ button.selected:hover {
   font-weight: bold;
   margin-right: 12px;
   padding-top: 8px;
-}
-
-.selblock input {
-  margin-right: 12px;
+  min-width: 54px;
 }
 
 .selblock input[name=width] {
@@ -303,7 +300,18 @@ button.selected:hover {
 
 .selblock select {
   width: 100px;
+}
+
+.m-left12 {
+  margin-left: 12px;
+}
+
+.m-right12 {
   margin-right: 12px;
+}
+
+#selwidth {
+  margin-right: 6px;
 }
 
 .hidden {
@@ -322,4 +330,13 @@ button.selected:hover {
   left: 0;
   z-index: 999;
   display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.group {
+  display: inline-block;
+  position: relative;
 }

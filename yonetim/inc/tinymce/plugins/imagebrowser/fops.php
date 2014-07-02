@@ -239,27 +239,39 @@
                 <input type="hidden" name="float" value="none" />
                 <input class="fileuploadbtn" type="file" data-root="<?php echo $root;?>" name="files[]" multiple>
 
-                <label><?php etrans("Image");?>:</label>
-                <input type="text" name="selfile" />
+                <div class="group m-right12">
+                    <label><?php etrans("Image");?>:</label>
+                    <input type="text" name="selfile" />
+                </div>
 
-                <label><?php etrans("Float");?>:</label>
-                <button class="float-btn grey selected" data-float="none"><?php etrans("None");?></button>
-                <button class="float-btn grey" data-float="left"><?php etrans("Left");?></button>
-                <button class="float-btn grey" data-float="right"><?php etrans("Right");?></button>
+                <div class="group m-right12">
+                    <label><?php etrans("Float");?>:</label>
+                    <button class="float-btn grey selected" data-float="none"><?php etrans("None");?></button>
+                    <button class="float-btn grey" data-float="left"><?php etrans("Left");?></button>
+                    <button class="float-btn grey" data-float="right"><?php etrans("Right");?></button>
+                </div>
 
-                <label></label>
-                <label><?php etrans("Width");?>:</label>
-                <select id="selwidth">
-                    <option value="auto">auto</option>
-                    <option value="25%">25%</option>
-                    <option value="25%">33%</option>
-                    <option value="50%">50%</option>
-                    <option value="25%">67%</option>
-                    <option value="75%">75%</option>
-                    <option value="100%">100%</option>
-                    <option value="1"><?php etrans("Free");?></option>
-                </select>
-                <input type="text" class="hidden" name="width" value="auto" />
+                <div class="group m-right12">
+                    <label><?php etrans("Width");?>:</label>
+                    <select id="selwidth">
+                        <option value="auto">auto</option>
+                        <option value="25%">25%</option>
+                        <option value="25%">33%</option>
+                        <option value="50%">50%</option>
+                        <option value="25%">67%</option>
+                        <option value="75%">75%</option>
+                        <option value="100%">100%</option>
+                        <option value="1"><?php etrans("Free");?></option>
+                    </select>
+                    <input type="text" class="hidden" name="width" value="auto" />
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="group">
+                    <label><?php etrans("Alt");?>:</label>
+                    <input type="text" name="alt" />
+                </div>
             </div>
         </div>
 

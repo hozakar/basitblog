@@ -21,6 +21,7 @@
         "None"                                              => "",
         "Left"                                              => "",
         "Right"                                             => "",
+        "Alt"                                               => "",
         "UPLOAD"                                            => "",
         "DELETE"                                            => "",
         "CUT"                                               => "",

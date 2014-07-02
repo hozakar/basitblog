@@ -21,6 +21,7 @@
         "None"                                              => "Yok",
         "Left"                                              => "Sol",
         "Right"                                             => "Sağ",
+        "Alt"                                               => "Alt",
         "UPLOAD"                                            => "YÜKLE",
         "DELETE"                                            => "SİL",
         "CUT"                                               => "KES",

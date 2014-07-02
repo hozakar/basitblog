@@ -311,6 +311,23 @@
             </div>
         </div>
 
+        <div class="ayrac"></div>
+
+        <div class="row">
+            <h3 class="col-xs-12">Analytics</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-2">Analytics Kodu</label>
+                    <div class="col-xs-12 col-sm-10">
+                        <textarea class="form-control" data-toggle="tooltip" data-placement="left" title="Analiz sisteminin verdiği kod bloğu" name="g_analytics" placeholder="Analytics Kodu"><?php $site->sbyaz('g_analytics');?></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-group">

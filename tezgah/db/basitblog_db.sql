@@ -1,4 +1,22 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : local
+Source Server Version : 50525
+Source Host           : localhost:3306
+Source Database       : basitblog_db
+
+Target Server Type    : MYSQL
+Target Server Version : 50525
+File Encoding         : 65001
+
+Date: 2014-07-02 22:13:49
+*/
+
 SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `etiketgruplari`
+-- ----------------------------
 DROP TABLE IF EXISTS `etiketgruplari`;
 CREATE TABLE `etiketgruplari` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -10,8 +28,15 @@ CREATE TABLE `etiketgruplari` (
   KEY `mid` (`mid`),
   CONSTRAINT `etiketgruplari_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `etiketler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `etiketgruplari_ibfk_2` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of etiketgruplari
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `etiketler`
+-- ----------------------------
 DROP TABLE IF EXISTS `etiketler`;
 CREATE TABLE `etiketler` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -24,8 +49,15 @@ CREATE TABLE `etiketler` (
   KEY `menu` (`menu`),
   KEY `sid` (`sid`),
   CONSTRAINT `etiketler_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of etiketler
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `foto`
+-- ----------------------------
 DROP TABLE IF EXISTS `foto`;
 CREATE TABLE `foto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -37,8 +69,15 @@ CREATE TABLE `foto` (
   KEY `uzanti` (`uzanti`),
   KEY `sira` (`sira`),
   CONSTRAINT `foto_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of foto
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `kullanicilar`
+-- ----------------------------
 DROP TABLE IF EXISTS `kullanicilar`;
 CREATE TABLE `kullanicilar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -52,8 +91,15 @@ CREATE TABLE `kullanicilar` (
   UNIQUE KEY `eposta` (`eposta`),
   KEY `sid` (`sid`),
   CONSTRAINT `kullanicilar_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of kullanicilar
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `log`
+-- ----------------------------
 DROP TABLE IF EXISTS `log`;
 CREATE TABLE `log` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -69,8 +115,15 @@ CREATE TABLE `log` (
   KEY `tarih` (`tarih`),
   KEY `tekil` (`tekil`),
   CONSTRAINT `log_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of log
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `makaleler`
+-- ----------------------------
 DROP TABLE IF EXISTS `makaleler`;
 CREATE TABLE `makaleler` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -95,8 +148,15 @@ CREATE TABLE `makaleler` (
   KEY `sid` (`sid`),
   CONSTRAINT `makaleler_ibfk_1` FOREIGN KEY (`kullanici`) REFERENCES `kullanicilar` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `makaleler_ibfk_2` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of makaleler
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sitebilgi`
+-- ----------------------------
 DROP TABLE IF EXISTS `sitebilgi`;
 CREATE TABLE `sitebilgi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -126,10 +186,19 @@ CREATE TABLE `sitebilgi` (
   `postasifre` varchar(255) DEFAULT NULL,
   `postaport` varchar(255) DEFAULT NULL,
   `postaauth` tinyint(4) NOT NULL DEFAULT '1',
+  `g_analytics` text,
   `aktif` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of sitebilgi
+-- ----------------------------
+INSERT INTO `sitebilgi` VALUES ('1', 'tr', 'utf-8', 'Asia/Istanbul', null, null, 'localhost', 'http://localhost', '/inc/images/varsayilan.png', 'localhost', 'localhost', null, 'd/m/Y', 'd/m/Y H:i', '25', '60', '120', '10', null, null, '/', null, null, null, null, null, '1', null, '1');
+
+-- ----------------------------
+-- Table structure for `sosyal`
+-- ----------------------------
 DROP TABLE IF EXISTS `sosyal`;
 CREATE TABLE `sosyal` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -143,8 +212,19 @@ CREATE TABLE `sosyal` (
   PRIMARY KEY (`id`),
   KEY `sid` (`sid`),
   CONSTRAINT `sosyal_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sitebilgi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of sosyal
+-- ----------------------------
+INSERT INTO `sosyal` VALUES ('1', 'Twitter', 'http://twitter.com/', 'twitter', '#00abf0', '#ffffff', '1', '0');
+INSERT INTO `sosyal` VALUES ('2', 'Facebook', 'http://facebook.com/', 'facebook', '#3c599f', '#ffffff', '1', '1');
+INSERT INTO `sosyal` VALUES ('3', 'Google+', 'http://plus.google.com/', 'google-plus', '#f03f27', '#ffffff', '1', '2');
+INSERT INTO `sosyal` VALUES ('4', 'RSS', '/rss.xml', 'rss', '#fea501', '#ffffff', '1', '3');
+
+-- ----------------------------
+-- Table structure for `yorumlar`
+-- ----------------------------
 DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -159,4 +239,8 @@ CREATE TABLE `yorumlar` (
   KEY `mid` (`mid`),
   KEY `tarih` (`tarih`),
   CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `makaleler` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of yorumlar
+-- ----------------------------

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{sitebilgi(dil)}}">
+<html lang="[[sitebilgi((dil))]]">
 	<head>
 		<!-- Standart Metalar -->
-		<meta charset="{{sitebilgi(charset)}}" />
+		<meta charset="[[sitebilgi((charset))]]" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="[[sayfabilgi((aciklama))]]" />
@@ -40,7 +40,7 @@
 		<link href="[[sitebilgi((anadizin))]]inc/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- Yazı Tipleri -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald|Roboto:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oswald|Roboto:400,400italic,700,700italic&amp;subset=latin-ext,latin' rel='stylesheet' type='text/css' />
 
 		<!-- Özel Stil Dosyaları -->
 		<link href="[[sitebilgi((anadizin))]]inc/css/stil.min.css" rel="stylesheet">
@@ -56,6 +56,7 @@
 		<![endif]-->
 
         <!-- Google Analytics İzleme Kodu -->
+        [[sitebilgi((g_analytics))]]
         <!-- Son:Google Analytics İzleme Kodu -->
 	</head>
 	<body>
@@ -160,8 +161,8 @@
 
             <div class="row alt-bilgi paylas">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-right">
-                    <a href="[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Twitter'da Paylaş"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    <a href="[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Facebook'ta Paylaş"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    <a href="https://twitter.com/intent/tweet?text=[[sayfabilgi((baslik))]]%20[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Twitter'da Paylaş" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=[[sitebilgi((url))]][[sayfabilgi((url))]]" title="Facebook'ta Paylaş" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a>
                 </div>
             </div>
 
