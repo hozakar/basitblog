@@ -13,20 +13,23 @@ Basit Blog PHP tabanlı, kolay kullanımlı bir blog scriptidir.
 
 #### İlk Ekran
 ![Ekran 1](http://beltslib.net/themes/images/basitblog/ekran-1.jpg)
-* Bu ekranda not almış olduğunuz veri tabanı bilgilerini giriniz.
+
+Bu ekranda not almış olduğunuz veri tabanı bilgilerini giriniz.
 
 #### İkinci Ekran
 ![Ekran 2](http://beltslib.net/themes/images/basitblog/ekran-2.jpg)
-* Sitenizin ana kullanıcısını bu ekranda oluşturmalısınız. Daha sonra sitenize istediğiniz sayıda kullanıcı eklemeniz mümkündür.
+
+Sitenizin ana kullanıcısını bu ekranda oluşturmalısınız. Daha sonra sitenize istediğiniz sayıda kullanıcı eklemeniz mümkündür.
 
 #### Üçüncü Ekran
 ![Ekran 3](http://beltslib.net/themes/images/basitblog/ekran-3.jpg)
-* Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi bilgileri gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri istediğinizde yönetim panelinden değiştirebilirsiniz.
+
+Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi bilgileri gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri istediğinizde yönetim panelinden değiştirebilirsiniz.
 
 #### Son Ekran
 ![Ekran 4](http://beltslib.net/themes/images/basitblog/ekran-4.jpg)
-* Evet, hepsi bu kadar. Artık yönetim panelinize girerek makalelerinizi yazmaya başlayabilirsiniz. Yine de başlamadan önce yönetim panelindeki site ayarları ekranından ayarlarınızı incelemeyi, özellikle sosyal medya adreslerinizi doğru bir şekilde girmeyi ihmal etmemenizi tavsiye ederiz...
 
+Evet, hepsi bu kadar. Artık yönetim panelinize girerek makalelerinizi yazmaya başlayabilirsiniz. Yine de başlamadan önce yönetim panelindeki site ayarları ekranından ayarlarınızı incelemeyi, özellikle sosyal medya adreslerinizi doğru bir şekilde girmeyi ihmal etmemenizi tavsiye ederiz...
 
 ### Diller
 Her ne kadar tüm dilleri destekleyebilse de gerek kaynak koduyla gerekse temel yapısı ile Türkçe kullanım için tasarlanmıştır.
