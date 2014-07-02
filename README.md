@@ -24,7 +24,7 @@ Sitenizin ana kullanıcısını bu ekranda oluşturmalısınız. Daha sonra site
 #### Üçüncü Ekran
 ![Ekran 3](http://beltslib.net/themes/images/basitblog/ekran-3.jpg)
 
-Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi bilgileri gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri istediğinizde yönetim panelinden değiştirebilirsiniz.
+Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri, istediğinizde yönetim panelinden değiştirebilirsiniz.
 
 #### Son Ekran
 ![Ekran 4](http://beltslib.net/themes/images/basitblog/ekran-4.jpg)
