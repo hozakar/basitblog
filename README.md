@@ -45,6 +45,7 @@ Her ne kadar tüm dilleri destekleyebilse de gerek kaynak koduyla gerekse temel 
 * [jQuery](http://jquery.com/)
 * [jQuery File Upload By blueimp](https://github.com/blueimp/jQuery-File-Upload)
 * [lightbox By lokesh](https://github.com/lokesh/lightbox2)
+* [MySQL](http://www.mysql.com/)
 * [PHP](http://php.net/)
 * [select2 By ivaynberg](https://github.com/ivaynberg/select2)
 * [smoothscroll By galambalazs](https://github.com/galambalazs/smoothscroll)
