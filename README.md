@@ -13,18 +13,22 @@ Basit Blog PHP tabanlı, kolay kullanımlı bir blog scriptidir.
 
 #### İlk Ekran
 ![Ekran 1](http://beltslib.net/themes/images/basitblog/ekran-1.jpg)
+
 Bu ekranda not almış olduğunuz veri tabanı bilgilerini giriniz.
 
 #### İkinci Ekran
 ![Ekran 2](http://beltslib.net/themes/images/basitblog/ekran-2.jpg)
+
 Sitenizin ana kullanıcısını bu ekranda oluşturmalısınız. Daha sonra sitenize istediğiniz sayıda kullanıcı eklemeniz mümkündür.
 
 #### Üçüncü Ekran
 ![Ekran 3](http://beltslib.net/themes/images/basitblog/ekran-3.jpg)
-Sitenizin ile ilgili site ismi, site başlığı, ana sayfa başlığı gibi bilgileri gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri istediğinizde yönetim panelinden değiştirebilirsiniz.
+
+Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi bilgileri gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri istediğinizde yönetim panelinden değiştirebilirsiniz.
 
 #### Son Ekran
 ![Ekran 4](http://beltslib.net/themes/images/basitblog/ekran-4.jpg)
+
 Evet, hepsi bu kadar. Artık yönetim panelinize girerek makalelerinizi yazmaya başlayabilirsiniz. Yine de başlamadan önce yönetim panelindeki site ayarları ekranından ayarlarınızı incelemeyi, özellikle sosyal medya adreslerinizi doğru bir şekilde girmeyi ihmal etmemenizi tavsiye ederiz...
 
 ### Diller
@@ -38,17 +42,17 @@ Her ne kadar tüm dilleri destekleyebilse de gerek kaynak koduyla gerekse temel 
 * [Highcharts](http://www.highcharts.com/)
 * [ImageBrowser For TinyMCE By hozakar](https://github.com/hozakar/imagebrowser-for-tinymce)
 * [imgfix By hozakar](https://github.com/hozakar/imgfix)
+* [jQuery](http://jquery.com/)
 * [jQuery File Upload By blueimp](https://github.com/blueimp/jQuery-File-Upload)
 * [lightbox By lokesh](https://github.com/lokesh/lightbox2)
+* [PHP](http://php.net/)
 * [select2 By ivaynberg](https://github.com/ivaynberg/select2)
 * [smoothscroll By galambalazs](https://github.com/galambalazs/smoothscroll)
 * [SyntaxHighlighter By alexgorbatchev](https://github.com/alexgorbatchev/SyntaxHighlighter)
 * [TinyMCE](http://www.tinymce.com/)
-* [jQuery](http://jquery.com/)
-* [PHP](http://php.net/)
 
 Lisans
 ------------
 CC0 1.0 Universal Licence
 
-Tüm kaynak dosyalar kendi lisanslarına sahiptir. Kullanmadan önce incelemeniz tavsiye edilir...
+Not: Tüm kaynak dosyalar kendi lisanslarına sahiptir. Kullanmadan önce incelemeniz tavsiye edilir...
