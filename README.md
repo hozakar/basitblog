@@ -6,27 +6,24 @@ Basit Blog
 
 Basit Blog PHP tabanlı, kolay kullanımlı bir blog scriptidir.
 
-### Kullanım
+### Kurulum
 * Öncelikle sunucunuzda boş bir MySQL veri tabanı oluşturmanız gerekli. Lütfen veri tabanı ismi, kullanıcı adı, şifresi ve sunucu adresini not alınız.
 * Basit Blog kaynağından indirdiğiniz dosyanın içeriğini sunucunuzun ana dizinine (root) kopyalayınız.
 * Şimdi tarayıcınızda adresinizi yazabilirsiniz. (Hala IE kullanıyor olamazsınız değil mi? Neyse onda da çalışır...)
+* Kurulum üç aşamada basitçe gerçekleştirilir:
 
-#### İlk Ekran
 ![Ekran 1](http://beltslib.net/themes/images/basitblog/ekran-1.jpg)
 
 Bu ekranda not almış olduğunuz veri tabanı bilgilerini giriniz.
 
-#### İkinci Ekran
 ![Ekran 2](http://beltslib.net/themes/images/basitblog/ekran-2.jpg)
 
 Sitenizin ana kullanıcısını bu ekranda oluşturmalısınız. Daha sonra sitenize istediğiniz sayıda kullanıcı eklemeniz mümkündür.
 
-#### Üçüncü Ekran
 ![Ekran 3](http://beltslib.net/themes/images/basitblog/ekran-3.jpg)
 
 Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi temel bilgileri girmeniz gereken ekran burasıdır. Bu bilgileri, istediğinizde yönetim panelinden değiştirebilirsiniz.
 
-#### Son Ekran
 ![Ekran 4](http://beltslib.net/themes/images/basitblog/ekran-4.jpg)
 
 Evet, hepsi bu kadar. Artık yönetim panelinize girerek makalelerinizi yazmaya başlayabilirsiniz. Yine de başlamadan önce yönetim panelindeki site ayarları ekranından ayarlarınızı incelemeyi, özellikle sosyal medya adreslerinizi doğru bir şekilde girmeyi ihmal etmemenizi tavsiye ederiz...
