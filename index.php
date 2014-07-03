@@ -28,9 +28,9 @@
 
     if($_REQUEST['url']) {
         $site->makale($_REQUEST['url']);
-        $dosya = getDir('index.php')."yonetim\\sablon\\".$site->url['sablon'];
+        $dosya = getDir('index.php')."yonetim/sablon/".$site->url['sablon'];
     } else {
-        $dosya = getDir('index.php')."yonetim\\sablon\\".$anasayfasablon;
+        $dosya = getDir('index.php')."yonetim/sablon/".$anasayfasablon;
     }
 
     /* Log tutalım ileride lazım olur... */

@@ -68,7 +68,7 @@ class site {
             }
             $dummy .= $item[0];
             $item = explode('))]]', $item[1], 2);
-            $dummy .= file_get_contents(getDir('index.php')."yonetim\\sablon\\".$item[0]);
+            $dummy .= file_get_contents(getDir('index.php')."yonetim/sablon/".$item[0]);
             $gelen = $item[1];
         }
         $gelen = $dummy;
