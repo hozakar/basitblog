@@ -30,7 +30,7 @@
         $site->makale($_REQUEST['url']);
         $dosya = getDir('index.php')."yonetim\\sablon\\".$site->url['sablon'];
     } else {
-        $dosya = getDir('index.php')."yonetim\\sablon\\index.html";
+        $dosya = getDir('index.php')."yonetim\\sablon\\".$anasayfasablon;
     }
 
     /* Log tutalım ileride lazım olur... */
