@@ -1,5 +1,5 @@
 <?php
-    $dosya = $_GET['dosya'];
+	$dosya = $_GET['dosya'];
     $id = $_GET['id'];
     $yol = $_GET['yol'];
     if(!$dosya || !$id || !$yol) return;
