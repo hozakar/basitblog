@@ -3,7 +3,7 @@
 /* !!! BU DOSYA HTML SAYFASININ SONUNDA YÜKLENMELİDİR !!! */
 
 /* *********************************************************
-** Sayfa scroll edilkdiğinde menu barın rengi değişsin
+** Sayfa scroll edildiğinde menu barın rengi değişsin
 ** sağ alt köşede yukarı butonu çıksın
 ** Sosyal Medya butonlarının renkleri tersine dönsün
 ********************************************************* */

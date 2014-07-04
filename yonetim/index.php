@@ -163,7 +163,10 @@
                         tinymce.init({
                             selector: ".icerik",
                             language : 'tr_TR',
-                            content_css : "<?php $site->sbyaz('anadizin')?>inc/css/stil.min.css?date<?php echo date('YmdHis');?>",
+                            content_css : [
+                                "<?php $site->sbyaz('anadizin')?>inc/css/font-awesome.min.css?date<?php echo date('YmdHis');?>",
+                                "<?php $site->sbyaz('anadizin')?>inc/css/stil.min.css?date<?php echo date('YmdHis');?>"
+                            ],
                             plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons syntaxhighlighter imagebrowser',
                             menubar: false,
                             toolbar: [
@@ -181,19 +184,8 @@
                     <script src="inc/select2/select2_locale_tr.js"></script>
                     
                     <!-- jQuery File Upload -->
-                    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
-                    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
-                    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-                    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
                     <script src="inc/jquery-file-upload/js/jquery.iframe-transport.js"></script>
                     <script src="inc/jquery-file-upload/js/jquery.fileupload.js"></script>
-                    <script src="inc/jquery-file-upload/js/jquery.fileupload-process.js"></script>
-                    <script src="inc/jquery-file-upload/js/jquery.fileupload-image.js"></script>
-                    <script src="inc/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
-                    <script src="inc/jquery-file-upload/js/jquery.fileupload-video.js"></script>
-                    <script src="inc/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
-                    <script src="inc/jquery-file-upload/js/jquery.fileupload-angular.js"></script>
-                    <script src="inc/jquery-file-upload/js/app.js"></script>
                     
                     <!-- imgfix -->
                     <script>

@@ -14,5 +14,10 @@
                 $db->query("UPDATE etiketler SET menu = NOT menu WHERE id = $_POST[id]");
             }
             break;
+        case 'sil':
+            if($_POST['id']) {
+                $db->query("DELETE FROM etiketler WHERE id = $_POST[id]");
+            }
+            break;
     }
 ?>

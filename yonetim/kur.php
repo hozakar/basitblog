@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $durum = "basla";
     if($_POST) {
         if($_POST['islem'] == 'vt_kur') {
@@ -465,6 +466,7 @@
                             $db->close();
                         } elseif($durum == 'tamam') {
                             $_SESSION['user'] = $db->query("SELECT * FROM kullanicilar WHERE id = 1")->fetch_assoc();
+                            $db->close();
                     ?>
                             <h1 class="text-center">
                                 Basit Blog Kurulumu<br>

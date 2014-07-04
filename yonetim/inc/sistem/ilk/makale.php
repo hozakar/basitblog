@@ -88,12 +88,14 @@
             while($item = current($rs->fetch_row())) $etiketidliste[$item] = 'sil';
 
             foreach($etiket as $item) {
-                $dummyid = current($db->query("SELECT id FROM etiketler WHERE isim = '".s_addslashes($item)."' AND sid = $_SESSION[sid]")->fetch_row());
-                if(!$dummyid) {
-                    $db->query("INSERT INTO etiketler (isim, sid) VALUES('".s_addslashes($item)."', $_SESSION[sid])");
-                    $dummyid = current($db->query("SELECT LAST_INSERT_ID() FROM etiketler")->fetch_row());
+                if($item) {
+                    $dummyid = current($db->query("SELECT id FROM etiketler WHERE isim = '".s_addslashes($item)."' AND sid = $_SESSION[sid]")->fetch_row());
+                    if(!$dummyid) {
+                        $db->query("INSERT INTO etiketler (isim, sid) VALUES('".s_addslashes($item)."', $_SESSION[sid])");
+                        $dummyid = current($db->query("SELECT LAST_INSERT_ID() FROM etiketler")->fetch_row());
+                    }
+                    $etiketidliste[$dummyid] = $etiketidliste[$dummyid] == 'sil' ? 'kal' : 'ekle';
                 }
-                $etiketidliste[$dummyid] = $etiketidliste[$dummyid] == 'sil' ? 'kal' : 'ekle';
             }
             
             foreach($etiketidliste as $item => $val) {
@@ -111,7 +113,15 @@
             return;
             break;
         case 'fotosil':
-            $db->query("DELETE FROM foto WHERE id = $_POST[id]");
+            if($_POST['id']) {
+                $foto = $_POST['id'].current($db->query("SELECT uzanti FROM foto WHERE id = $_POST[id]")->fetch_row());
+                $klasorler = explode(',', 'buyuk,normal,minik');
+                foreach($klasorler as $klasor) {
+                    $yol = $_SERVER['DOCUMENT_ROOT'].$sb['anadizin'];
+                    unlink($yol."upload/foto/".$klasor."/".$foto);
+                }
+                $db->query("DELETE FROM foto WHERE id = $_POST[id]");
+            }
             break;
         case 'fotosirala':
             $sira = explode(',', $_POST['sira']);

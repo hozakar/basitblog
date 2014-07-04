@@ -45,4 +45,18 @@
         });
     });
 
+    $('.sil').click(function () {
+        var id = $(this).data('id');
+        $.ajax({
+            url: "?sayfa=etiketler",
+            method: 'post',
+            data: {
+                islem: 'sil',
+                id: id
+            }
+        }).done(function () {
+            location.reload();
+        });
+    });
+
 })(jQuery);
