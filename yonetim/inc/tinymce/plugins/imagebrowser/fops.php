@@ -61,7 +61,7 @@
             }
         }
 
-        rename(clearSlashes(getDir().'fileupload/images/php/files/'.$file, FALSE, FALSE), clearSlashes($docRoot.$root.$currentFile, FALSE, FALSE));
+        rename(clearSlashes(getDir().'/fileupload/images/php/files/'.$file, FALSE, FALSE), clearSlashes($docRoot.$root.$currentFile, FALSE, FALSE));
 
         return;
     }
