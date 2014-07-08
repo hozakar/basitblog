@@ -13,6 +13,7 @@
 */
 
     session_start();
+	error_reporting(0);
     $ow = $_REQUEST['ow'];
     $lang = $_REQUEST['lang'];
 
@@ -60,7 +61,7 @@
             }
         }
 
-        rename(clearSlashes('fileupload/images/php/files/'.$file, FALSE, FALSE), clearSlashes($docRoot.$root.$currentFile, FALSE, FALSE));
+        rename(clearSlashes(getDir().'fileupload/images/php/files/'.$file, FALSE, FALSE), clearSlashes($docRoot.$root.$currentFile, FALSE, FALSE));
 
         return;
     }
@@ -188,6 +189,32 @@
         }
         $path = ($beginsWithSlash ? '/' : '').substr($path, 1, strlen($path) - 2).($endsWithSlash ? '/' : '');
         return $path;
+    }
+
+    function getDir($dosya = 'fops.php') {
+        $hoy = get_included_files();
+        foreach ($hoy as $f) {
+		    if(strpos($f, $dosya)>-1) {
+			    $h = $f;
+			    break;
+		    }
+	    }
+	    if($h) {
+		    $h = explode($dosya, $h);
+		    $h = $h[0];
+	    } else {
+		    $h = '';
+	    }
+
+	    /*
+	    ** Sunucuyu yapılandıran kişinin o anda ne içtiğine bağlı olarak
+	    ** document_root bilgisini ayrıca ayıklamak gerekebilir
+	    ** Teşekkürler isimtescil
+	    */
+	    $dr = $_SERVER['DOCUMENT_ROOT'];
+	    $h = $dr.end(explode($dr, $h));
+
+	    return $h;
     }
     /* End: Functions */
 ?>
