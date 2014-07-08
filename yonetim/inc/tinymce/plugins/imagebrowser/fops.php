@@ -60,7 +60,7 @@
             }
         }
 
-        rename(clearSlashes(getDir().'fileupload/images/php/files/'.$file, FALSE, FALSE), clearSlashes($docRoot.$root.$currentFile, FALSE, FALSE));
+        rename(clearSlashes('fileupload/images/php/files/'.$file, FALSE, FALSE), clearSlashes($docRoot.$root.$currentFile, FALSE, FALSE));
 
         return;
     }
@@ -143,23 +143,6 @@
     function trans($phrase) {
         global $translate;
         return $translate[$phrase] ? $translate[$phrase] : $phrase;
-    }
-
-    function getDir() {
-	    $hoy = get_included_files();
-	    foreach ($hoy as $f) {
-		    if(strpos($f, 'fops.php')>-1) {
-			    $h = $f;
-			    break;
-		    }
-	    }
-	    if($h) {
-		    $h = explode('fops.php', $h);
-		    $h = $h[0];
-	    } else {
-		    $h = '';
-	    }
-	    return $h;
     }
 
     function getList($root) {

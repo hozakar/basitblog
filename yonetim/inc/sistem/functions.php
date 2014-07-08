@@ -17,6 +17,15 @@ function getDir($dosya = 'functions.php') {
 	} else {
 		$h = '';
 	}
+
+	/*
+	** Sunucuyu yapılandıran kişinin o anda ne içtiğine bağlı olarak
+	** document_root bilgisini ayrıca ayıklamak gerekebilir
+	** Teşekkürler isimtescil
+	*/
+	$dr = $_SERVER['DOCUMENT_ROOT'];
+	$h = $dr.end(explode($dr, $h));
+
 	return $h;
 }
 

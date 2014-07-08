@@ -16,7 +16,7 @@
                         "isim"      => "'.$_POST['isim'].'"
                     );
                 ?>';
-                file_put_contents(getDir().'inc/sistem/vtbilgi.php', $vtbilgiicerik);
+                file_put_contents('inc/sistem/vtbilgi.php', $vtbilgiicerik);
 
                 $db->query("DROP TABLE IF EXISTS `yorumlar`");
                 $db->query("DROP TABLE IF EXISTS `sosyal`");
@@ -254,27 +254,10 @@
             }
         }
     } else {
-        if(file_exists(getDir().'inc/sistem/vtbilgi.php')) {
+        if(file_exists('inc/sistem/vtbilgi.php')) {
             echo '<h1 style="text-align: center;">Site kurulumu zaten yapilmis!</h1>';
             return;
         }
-    }
-    
-    function getDir($dosya = 'kur.php') {
-        $hoy = get_included_files();
-        foreach ($hoy as $f) {
-		    if(strpos($f, $dosya)>-1) {
-			    $h = $f;
-			    break;
-		    }
-	    }
-	    if($h) {
-		    $h = explode($dosya, $h);
-		    $h = $h[0];
-	    } else {
-		    $h = '';
-	    }
-	    return $h;
     }
 ?>
 <!DOCTYPE html>
