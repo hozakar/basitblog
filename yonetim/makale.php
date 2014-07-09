@@ -46,7 +46,7 @@
                         <?php
                         $sablon = dir("sablon/");
                         while (false !== ($dosya = $sablon->read())) {
-                            if(substr($dosya, -5)=='.html') echo '<option value="'.$dosya.'" '.($dosya == $makale['sablon'] || ($id == 0 && $dosya == 'makale.html') ? 'selected' : '').'>'.$dosya.'</option>';
+                            if(substr($dosya, -5)=='.html' && substr($dosya, 0, 5) != 'index') echo '<option value="'.$dosya.'" '.($dosya == $makale['sablon'] || ($id == 0 && $dosya == 'makale.html') ? 'selected' : '').'>'.$dosya.'</option>';
                         }
                         $sablon->close();
                         ?>
