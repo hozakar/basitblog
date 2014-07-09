@@ -45,9 +45,6 @@
 		<!-- Özel Stil Dosyaları -->
 		<link href="[[sitebilgi((anadizin))]]inc/css/stil.min.css" rel="stylesheet">
         <link href="[[sitebilgi((anadizin))]]inc/css/sol-menu.min.css" rel="stylesheet">
-	    
-        <!-- Syntax Highlighter -->
-	    <link type="text/css" rel="stylesheet" href="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/styles/shCoreDefault.css"/>
 
 		<!-- jQuery Sayfa İçeriğinde Gerekebileceğinden Öncelikli Yükleniyor -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -69,7 +66,7 @@
         <!-- Modal Form -->
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <form class="modal-content form" method="post">
+                <form class="modal-content form yorumform" method="post">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="modalLabel">Yorum Yap</h4>
@@ -124,7 +121,7 @@
             </div>
             <div class="sayfa-baslik container">
                 <div class="row">
-                    <h1 class="col-xs-10 col-sm-8 col-sm-offset-2">
+                    <h1 class="col-xs-10 col-sm-8 col-sm-offset-2 col-xs-offset-1">
                         [[sayfabilgi((baslik))]]
                         <br>
                         <small>
@@ -140,7 +137,6 @@
         <div class="container makale">
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-
                     <span class="tarih">[[sayfabilgi((tarih))]]<br>[[sayfabilgi((yazar))]]</span>
                     <br>
                     [[sayfabilgi((icerik))]]
@@ -174,7 +170,7 @@
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                     <h3>Etiketler</h3>
                     [[etiket(()){{
-                        <a href="/etiket/[@=isim@].html" class="btn btn-info">
+                        <a href="/etiket/[@=isim@]" class="btn btn-info">
                             <i class="fa fa-circle" style="color: [@=renk@]"></i>
                             [@=isim@]
                         </a>
@@ -237,28 +233,14 @@
         [[ekle((eklemeler/altbar.html))]]
 
 		<!-- Genel JavaScript Dosyaları -->
-		<script src="inc/js/bootstrap.min.js"></script>
-		<script src="inc/js/imgfix.min.js"></script>
-		<script src="inc/js/sscr.js"></script>
-        <script src="inc/js/sol-menu.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/bootstrap.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/imgfix.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/sscr.js"></script>
+        <script src="[[sitebilgi((anadizin))]]inc/js/sol-menu.min.js"></script>
 		<!-- Lightbox -->
     	<script src="[[sitebilgi((anadizin))]]inc/js/lightbox/js/lightbox.min.js"></script>
-		<!-- Özel JS Dosyaları -->
+        <!-- Özel JS Dosyaları -->
 		<script src="inc/js/genel.min.js"></script>
-
-        <!-- Syntax Highlighter -->
-        <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shCore.js"></script>
-	    <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-	    <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shBrushXml.js"></script>
-	    <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shBrushSql.js"></script>
-	    <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shBrushSass.js"></script>
-	    <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shBrushPhp.js"></script>
-	    <script type="text/javascript" src="[[sitebilgi((anadizin))]]inc/js/syntaxhighlighter/scripts/shBrushCss.js"></script>
-	    <script type="text/javascript">
-            SyntaxHighlighter.defaults['toolbar'] = false;
-            SyntaxHighlighter.all();
-        </script>
-
         <script>
             $('.sol-menu').solMenu();
             $('.bar-bg').imgfix();
@@ -266,12 +248,12 @@
                 scale: 1.125,
                 height: '75%'
             });
-            $('form').submit(function () {
+            $('.yorumform').submit(function () {
                 if ($(this).data('submit') != 'ok') {
                     $('.yorumok').fadeToggle(200);
                     setTimeout(function () {
                         $('form').data('submit', 'ok');
-                        $('form').submit(); 
+                        $('form').submit();
                     }, 1000);
                     return false;
                 }
