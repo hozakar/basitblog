@@ -173,7 +173,7 @@
                                 "code | undo redo | style-h2 style-h3 | syntaxhighlighter | bold italic underline strikethrough | bullist numlist | forecolor | blockquote | link imagebrowser | alignleft aligncenter alignright alignjustify | table | searchreplace"
                             ],
                             imagebrowser: {
-                                root: "/inc/images/",
+                                root: "/inc/images/kullanici/",
                                 overwrite: false
                             }
                         });
