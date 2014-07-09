@@ -12,6 +12,19 @@
 
     <form class="form-horizontal" role="form" method="post">
         <input type="hidden" name="id" value="<?php $site->sbyaz('id');?>" />
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group text-right">
+                    <label class="col-xs-12">
+                        Site Aktif
+                        &nbsp;
+                        <input type="checkbox" name="aktif" value="1" <?php echo $sb['aktif'] ? 'checked' : '';?> />
+                    </label>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <h3 class="col-xs-12">Genel Bilgiler</h3>
         </div>

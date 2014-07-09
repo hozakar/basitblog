@@ -31,7 +31,8 @@
                 postasifre      = '".s_addslashes($_POST['postasifre'])."',
                 postaport       = '".s_addslashes($_POST['postaport'])."',
                 postaauth       = ".(intval($_POST['postaauth']) > 0 ? intval($_POST['postaauth']) : 0).",
-                g_analytics     = '".s_addslashes($_POST['g_analytics'])."'
+                g_analytics     = '".s_addslashes($_POST['g_analytics'])."',
+                aktif           = ".($_POST['aktif'] ? 1 : 0)."
             WHERE id = $_POST[id]");
     }
 
