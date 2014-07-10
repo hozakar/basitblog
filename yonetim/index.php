@@ -175,7 +175,8 @@
                             imagebrowser: {
                                 root: "<?php $site->sbyaz('anadizin')?>inc/images/kullanici/",
                                 overwrite: false
-                            }
+                            },
+							relative_urls : false
                         });
                     </script>
 
