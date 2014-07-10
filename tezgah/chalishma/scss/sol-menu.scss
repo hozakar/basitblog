@@ -35,6 +35,7 @@
 .sol-menu-body-wrapper {
     transition: all .2s;
     &.aktif {
-        filter: blur(2px);
+        filter: grayscale(100%);
+        filter: gray;
     }
 }
