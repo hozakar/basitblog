@@ -2,6 +2,8 @@
     if($_POST['id']) {
         $siteurl = $_POST['url'];
         if(substr($siteurl, -1) == '/') $siteurl = substr($siteurl, 0, strlen($siteurl) - 1);
+        $anadizin = $_POST['anadizin'];
+        while(strpos($anadizin, '//') !== FALSE) $anadizin = str_replace('//', '/', '/'.$anadizin.'/');
         $db->query("
             UPDATE sitebilgi 
             SET 
@@ -24,7 +26,7 @@
                 satirsayi       = ".(intval($_POST['satirsayi']) > 0 ? intval($_POST['satirsayi']) : 0).",
                 yazar           = '".s_addslashes($_POST['yazar'])."',
                 yazarposta      = '".s_addslashes($_POST['yazarposta'])."',
-                anadizin        = '".s_addslashes($_POST['anadizin'])."',
+                anadizin        = '".s_addslashes($anadizin)."',
                 postaadres      = '".s_addslashes($_POST['postaadres'])."',
                 postasunucu     = '".s_addslashes($_POST['postasunucu'])."',
                 postakullanici  = '".s_addslashes($_POST['postakullanici'])."',
@@ -34,6 +36,18 @@
                 g_analytics     = '".s_addslashes($_POST['g_analytics'])."',
                 aktif           = ".($_POST['aktif'] ? 1 : 0)."
             WHERE id = $_POST[id]");
+
+			$ad = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+            $ad = str_replace('//', '/', $ad.$anadizin.'.htaccess');
+            if(file_exists($ad)) {
+                $htaccess = file_get_contents($ad);
+                $htaccess = explode('ReWriteBase', $htaccess);
+                if(count($htaccess) == 2) {
+                    $htaccess[1] = end(explode(chr(13).chr(10), $htaccess[1], 2));
+                    $htaccess = implode('ReWriteBase '.$anadizin.chr(13).chr(10), $htaccess);
+                    file_put_contents($ad, $htaccess);
+                }
+            }
     }
 
     $q = $db->query("SELECT id FROM sosyal WHERE sid = $_SESSION[sid]");

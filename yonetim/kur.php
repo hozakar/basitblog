@@ -207,7 +207,7 @@
                         '/inc/images/varsayilan.png',
                         '".$_SERVER['SERVER_NAME']."',
                         '".$_SERVER['SERVER_NAME']."',
-                        1
+                        0
                     )
                 ");
 
@@ -238,7 +238,7 @@
                 $durum = 'baglanti_hata';
             } else {
 				$anadizin = $_POST['anadizin'];
-				if(!$anadizin) $anadizin = '/';
+				while(strpos($anadizin, '//') !== FALSE) $anadizin = str_replace('//', '/', '/'.$anadizin.'/');
                 $hoy = $db->query("
                     UPDATE `sitebilgi` SET
                         isim = '".addslashes($_POST['isim'])."',
@@ -254,11 +254,16 @@
                     WHERE id = 1
                 ");
 
-                $ad = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
-                $ad = str_replace('//', '/', $ad.'/.htaccess');
+				$ad = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+                $ad = str_replace('//', '/', $ad.$anadizin.'.htaccess');
                 if(file_exists($ad)) {
-                    $htaccess = str_replace('ReWriteBase /', 'ReWriteBase /web/hoy/', file_get_contents($ad)));
-                    file_put_contents($ad, $htaccess);
+                    $htaccess = file_get_contents($ad);
+                    $htaccess = explode('ReWriteBase', $htaccess);
+                    if(count($htaccess) == 2) {
+                        $htaccess[1] = end(explode(chr(13).chr(10), $htaccess[1], 2));
+                        $htaccess = implode('ReWriteBase '.$anadizin.chr(13).chr(10), $htaccess);
+                        file_put_contents($ad, $htaccess);
+                    }
                 }
 
                 $durum = ($hoy ? 'tamam' : 'baglanti_hata');
