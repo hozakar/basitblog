@@ -237,6 +237,8 @@
             if($db->connect_errno) {
                 $durum = 'baglanti_hata';
             } else {
+				$anadizin = $_POST['anadizin'];
+				if(!$anadizin) $anadizin = '/';
                 $hoy = $db->query("
                     UPDATE `sitebilgi` SET
                         isim = '".addslashes($_POST['isim'])."',
@@ -247,7 +249,8 @@
                         asbaslik = '".addslashes($_POST['asbaslik'])."',
                         asaltbaslik = '".addslashes($_POST['asaltbaslik'])."',
                         yazar = '".addslashes($_POST['yazar'])."',
-                        yazarposta = '".addslashes($_POST['yazarposta'])."'
+                        yazarposta = '".addslashes($_POST['yazarposta'])."',
+						anadizin = '".addslashes($anadizin)."'
                     WHERE id = 1
                 ");
                 $durum = ($hoy ? 'tamam' : 'baglanti_hata');
@@ -271,9 +274,9 @@
 		<title>Basit Blog Kurulum</title>
 
 		<!-- Bootstrap CSS -->
-		<link href="/inc/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../inc/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Font Awesome CSS -->
-		<link href="/inc/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../inc/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- Yazı Tipleri -->
         <link href='http://fonts.googleapis.com/css?family=Oswald|Roboto:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -411,6 +414,12 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label>Ana Dizin</label>
+                                        <input name="anadizin" type="text" class="form-control" placeholder="Ana Dizin" value="<?php echo $rs['anadizin'];?>" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
                                         <label>Site Başlığı</label>
                                         <input name="baslik" class="form-control" placeholder="Site Başlığı" value="<?php echo $rs['baslik'];?>" />
                                     </div>
@@ -459,7 +468,7 @@
                                 Lütfen siteniz ile ilgili detaylı ayarlamaları <strong>Yönetim Panelinde Site Bilgileri</strong> sayfasından yapınız.<br><br>
                             </p>
 
-                            <a href="/yonetim/?sayfa=ayarlar" class="btn btn-success" style="width: 100%;">KULLANMAYA BAŞLA</a>
+                            <a href="index.php?sayfa=ayarlar" class="btn btn-success" style="width: 100%;">KULLANMAYA BAŞLA</a>
                     <?php
                         }
                     ?>
@@ -468,6 +477,6 @@
         </div>
         
         <!-- Genel JavaScript Dosyaları -->
-		<script src="/inc/js/bootstrap.min.js"></script>
+		<script src="../inc/js/bootstrap.min.js"></script>
     </body>
 </html>
