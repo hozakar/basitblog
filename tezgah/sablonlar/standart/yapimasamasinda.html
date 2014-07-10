@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="[[sitebilgi((dil))]]">
+	<head>
+		<!-- Standart Metalar -->
+		<meta charset="[[sitebilgi((charset))]]">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="[[sitebilgi((aciklama))]]">
+		<meta name="keywords" content="[[sitebilgi((keywords))]]">
+		<meta name="author" content="[[sitebilgi((yazar))]], [[sitebilgi((yazarposta))]]">
+
+		<!-- Sosyal Medya -->
+		<!-- Facebook -->
+		<meta property="og:title" content="[[sitebilgi((baslik))]]"/>
+		<meta property="og:type" content="article"/>
+		<meta property="og:image" content="[[sitebilgi((foto))]]"/>
+		<meta property="og:url" content="[[sitebilgi((url))]]"/>
+		<meta property="og:description" content="[[sitebilgi((aciklama))]]"/>
+		<meta property="og:site_name" content="[[sitebilgi((isim))]]" /> 
+		<!-- Twitter -->
+		<meta name="twitter:card" content="Özet">
+		<meta name="twitter:site" content="[[sitebilgi((isim))]]">
+		<meta name="twitter:url" content="[[sitebilgi((url))]]">
+		<meta name="twitter:title" content="[[sitebilgi((baslik))]]">
+		<meta name="twitter:description" content="[[sitebilgi((aciklama))]]">
+		<meta name="twitter:creator" content="[[sitebilgi((yazar))]]">
+		<meta name="twitter:image" content="[[sitebilgi((foto))]]">
+		<!-- Google+ -->
+		<meta itemprop="name" content="[[sitebilgi((isim))]]">
+		<meta itemprop="description" content="[[sitebilgi((aciklama))]]">
+		<meta itemprop="image" content="[[sitebilgi((foto))]]">
+		
+		<title>[[sitebilgi((baslik))]]</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="[[sitebilgi((anadizin))]]inc/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome CSS -->
+		<link href="[[sitebilgi((anadizin))]]inc/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Yazı Tipleri -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald|Roboto:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+
+		<!-- Özel Stil Dosyaları -->
+		<link href="[[sitebilgi((anadizin))]]inc/css/stil.min.css" rel="stylesheet">
+        <link href="[[sitebilgi((anadizin))]]inc/css/sol-menu.min.css" rel="stylesheet">
+
+		<!-- IE8 Desteği için -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+        <!-- Google Analytics İzleme Kodu -->
+        <!-- Son:Google Analytics İzleme Kodu -->
+	</head>
+	<body>
+        
+        <!-- Üst Bar -->
+        <div class="ust-bar">
+            <div class="bar-bg" data-fix-img="[[sitebilgi((foto))]]"></div>
+            <div class="menu-bar">
+                <div class="sosyal">
+                    [[sosyal(()){{
+                        <a href="[@=fullurl@]" data-color="[@=renk@]" data-hover-color="[@=hoverrenk@]" target="_blank"><i class="fa fa-[@=ikon@]"></i></a>
+                    }}]]
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="[[sitebilgi((gravatar))]]" alt="avatar" />
+            </div>
+            <div class="sayfa-baslik container">
+                <div class="row">
+                    <h1 class="col-xs-10 col-sm-8 col-sm-offset-2">
+                        [[sitebilgi((asbaslik))]]<br />
+                        <small>
+                            [[sitebilgi((asaltbaslik))]]
+                        </small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <!-- Son: Üst Bar -->
+
+        <!-- Sayfa İçeriği -->
+        <div class="container makaleliste">
+            <br>
+            <h1 class="text-center">
+                Yapım Aşamasında
+            </h1>
+            <br><br>
+        </div>
+        
+        <!-- Son: Sayfa İçeriği -->
+
+        [[ekle((eklemeler/altbar.html))]]
+
+		<!-- Genel JavaScript Dosyaları -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/bootstrap.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/imgfix.min.js"></script>
+		<script src="[[sitebilgi((anadizin))]]inc/js/sscr.js"></script>
+        <script src="[[sitebilgi((anadizin))]]inc/js/sol-menu.min.js"></script>
+		<!-- Özel JS Dosyaları -->
+		<script src="[[sitebilgi((anadizin))]]inc/js/genel.min.js"></script>
+        <script>
+            $('.bar-bg').imgfix();
+            $(function () {
+                $('.makaleliste').css('min-height', $(window).height() - 660);
+            });
+        </script>
+	</body>
+</html>
