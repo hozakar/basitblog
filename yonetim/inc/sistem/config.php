@@ -5,7 +5,7 @@ error_reporting(0);
 if(file_exists(getDir().'vtbilgi.php')) {
     include('vtbilgi.php');
 } else {
-    header('location: /yonetim/kur.php');
+    header('location: yonetim/kur.php');
     return;
 }
 
