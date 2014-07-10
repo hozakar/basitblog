@@ -318,6 +318,9 @@ class site {
             case 'url':
                 $deger = $this->sb['anadizin'].$deger.'.html';
                 break;
+			case 'anadizin':
+				$deger = $this->sb['anadizin'];
+				break;
             case 'gravatar':
                 $deger = "http://www.gravatar.com/avatar/".md5(strtolower(trim($deger)))."?s=120";
                 break;
