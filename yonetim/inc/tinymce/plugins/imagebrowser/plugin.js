@@ -18,7 +18,7 @@ tinymce.PluginManager.add('imagebrowser', function (editor, url) {
         onclick: function () {
             editor.windowManager.open({
                 title: editor.getParam("imagebrowser")["windowcaption"] ? editor.getParam("imagebrowser")["windowcaption"] : 'Image Browser',
-                url: url + '/fops.php?lang=' + (editor.getParam("language") ? editor.getParam("language") : '') + '&ow=' + editor.getParam("imagebrowser")["overwrite"] + '&root=' + editor.getParam("imagebrowser")["root"],
+                url: url + '/fops.php?lang=' + (editor.getParam("language") ? editor.getParam("language") : '') + '&ow=' + editor.getParam("imagebrowser")["overwrite"] + '&root=' + editor.getParam("imagebrowser")["root"] + '&settoplimit=true',
                 width: $(window).width() * .7,
                 height: $(window).height() * .7,
                 buttons: [

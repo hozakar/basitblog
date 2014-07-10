@@ -23,8 +23,7 @@
     $docRoot = clearSlashes($_SERVER['DOCUMENT_ROOT'], FALSE);
     $fullRoot = clearSlashes($docRoot.$root,FALSE);
 
-    //$_SESSION['toplimit'] = '';
-    if(!$_SESSION['toplimit']) {
+    if(!$_SESSION['toplimit'] || $_GET['settoplimit'] == 'true') {
         $_SESSION['toplimit'] = $fullRoot;
         $_SESSION['initialroot'] = $root;
     }
@@ -146,6 +145,33 @@
         return $translate[$phrase] ? $translate[$phrase] : $phrase;
     }
 
+    function getDir($dosya = 'fops.php') {
+        $hoy = get_included_files();
+        foreach ($hoy as $f) {
+		    if(strpos($f, $dosya)>-1) {
+			    $h = $f;
+			    break;
+		    }
+	    }
+	    if($h) {
+		    $h = explode($dosya, $h);
+		    $h = $h[0];
+	    } else {
+		    $h = '';
+	    }
+
+	    /*
+	    ** Sunucuyu yapılandıran kişinin o anda ne içtiğine bağlı olarak
+	    ** document_root bilgisini ayrıca ayıklamak gerekebilir
+	    ** Teşekkürler isimtescil
+	    */
+		$h = str_replace('\\', '/', $h);
+		$dr =  str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+		$h = $dr.end(explode($dr, $h));
+
+	    return $h;
+    }
+
     function getList($root) {
         $d = dir($root);
         $dir = array();
@@ -183,39 +209,14 @@
     }
 
     function clearSlashes($path, $beginsWithSlash = TRUE, $endsWithSlash = TRUE) {
-        if(strpos($path, ':\\') != -1) $beginsWithSlash = TRUE; //Bugfix
-        $path = '/'.$path.'/';
+        while(strpos($path, '\\') !== FALSE) $path = str_replace('\\', '/', $path); //Bugfix
+		if(strpos($path, ':/') === FALSE) $beginsWithSlash = TRUE; //Bugfix
+		$path = '/'.$path.'/';
         while(strpos($path, '//') > -1) {
             $path = str_replace('//', '/', $path);
         }
         $path = ($beginsWithSlash ? '/' : '').substr($path, 1, strlen($path) - 2).($endsWithSlash ? '/' : '');
         return $path;
-    }
-
-    function getDir($dosya = 'fops.php') {
-        $hoy = get_included_files();
-        foreach ($hoy as $f) {
-		    if(strpos($f, $dosya)>-1) {
-			    $h = $f;
-			    break;
-		    }
-	    }
-	    if($h) {
-		    $h = explode($dosya, $h);
-		    $h = $h[0];
-	    } else {
-		    $h = '';
-	    }
-
-	    /*
-	    ** Sunucuyu yapılandıran kişinin o anda ne içtiğine bağlı olarak
-	    ** document_root bilgisini ayrıca ayıklamak gerekebilir
-	    ** Teşekkürler isimtescil
-	    */
-	    $dr = $_SERVER['DOCUMENT_ROOT'];
-	    $h = $dr.end(explode($dr, $h));
-
-	    return $h;
     }
     /* End: Functions */
 ?>
