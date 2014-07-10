@@ -8,14 +8,14 @@
                 $durum = 'baglanti_hata';
             } else {
                 $vtbilgiicerik = '<?php
-                    /*veri Tabanı Aktivasyonu*/
-                    $vt_bilgi = array(
-                        "sunucu"    => "'.$_POST['sunucu'].'",
-                        "kullanici" => "'.$_POST['kullanici'].'",
-                        "sifre"     => "'.$_POST['sifre'].'",
-                        "isim"      => "'.$_POST['isim'].'"
-                    );
-                ?>';
+    /*veri Tabanı Aktivasyonu*/
+    $vt_bilgi = array(
+        "sunucu"    => "'.$_POST['sunucu'].'",
+        "kullanici" => "'.$_POST['kullanici'].'",
+        "sifre"     => "'.$_POST['sifre'].'",
+        "isim"      => "'.$_POST['isim'].'"
+    );
+?>';
                 file_put_contents('inc/sistem/vtbilgi.php', $vtbilgiicerik);
 
                 $db->query("DROP TABLE IF EXISTS `yorumlar`");
@@ -253,6 +253,14 @@
 						anadizin = '".addslashes($anadizin)."'
                     WHERE id = 1
                 ");
+
+                $ad = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+                $ad = str_replace('//', '/', $ad.'/.htaccess');
+                if(file_exists($ad)) {
+                    $htaccess = str_replace('ReWriteBase /', 'ReWriteBase /web/hoy/', file_get_contents($ad)));
+                    file_put_contents($ad, $htaccess);
+                }
+
                 $durum = ($hoy ? 'tamam' : 'baglanti_hata');
             }
         }
