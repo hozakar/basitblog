@@ -86,6 +86,7 @@
                         </div>
                         <div class="modal-body">
                                 <input type="hidden" name="id" value="" />
+                                <input type="hidden" name="islem" value="duzenle" />
                                 <div class="row form-group">
                                     <div class="col-xs-12">
                                         <label class="control-label col-xs-3">İsim</label>

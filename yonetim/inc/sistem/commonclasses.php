@@ -137,7 +137,7 @@ class site {
 
     private function sitebilgi($alan) {
         $deger = $this->sb[$alan];
-        if($alan == 'foto' && strpos($deger, '://') === FALSE) $deger = $this->sb['anadizin'].$deger;
+        if($alan == 'foto' && strpos($deger, '://') === FALSE) $deger = str_replace('//', '/', $this->sb['anadizin'].$deger);
         if($alan == 'gravatar') $deger = "http://www.gravatar.com/avatar/".md5(strtolower(trim($this->sb['yazarposta'])))."?s=120";
         return $deger;
     }
