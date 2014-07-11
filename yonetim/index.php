@@ -21,6 +21,13 @@
         <!-- Yazı Tipleri -->
         <link href='http://fonts.googleapis.com/css?family=Oswald|Roboto:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
 
+        <!-- Faviconlar -->
+        <link rel="shortcut icon" type='image/x-icon' href="../favicon.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../apple-touch-icon-144x144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../apple-touch-icon-114x114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../apple-touch-icon-72x72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="../apple-touch-icon-precomposed.png">
+
         <?php   if($_GET['sayfa'] == 'makale') {?>
                     <!-- select2 -->
                     <link href="inc/select2/select2.css" rel="stylesheet"/>
