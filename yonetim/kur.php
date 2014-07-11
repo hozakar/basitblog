@@ -260,8 +260,8 @@
                     $htaccess = file_get_contents($ad);
                     $htaccess = explode('ReWriteBase', $htaccess);
                     if(count($htaccess) == 2) {
-                        $htaccess[1] = end(explode(chr(13).chr(10), $htaccess[1], 2));
-                        $htaccess = implode('ReWriteBase '.$anadizin.chr(13).chr(10), $htaccess);
+                        $htaccess[1] = end(explode("\n", $htaccess[1], 2));
+                        $htaccess = implode('ReWriteBase '.$anadizin."\n", $htaccess);
                         file_put_contents($ad, $htaccess);
                     }
                 }
