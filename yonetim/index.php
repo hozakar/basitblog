@@ -167,10 +167,10 @@
                                 "<?php $site->sbyaz('anadizin')?>inc/css/font-awesome.min.css?date<?php echo date('YmdHis');?>",
                                 "<?php $site->sbyaz('anadizin')?>inc/css/stil.min.css?date<?php echo date('YmdHis');?>"
                             ],
-                            plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons syntaxhighlighter imagebrowser',
+                            plugins : 'link image visualblocks textcolor code table searchreplace stylebuttons syntaxhighlighter imagebrowser media',
                             menubar: false,
                             toolbar: [
-                                "code | undo redo | style-h2 style-h3 | syntaxhighlighter | bold italic underline strikethrough | bullist numlist | forecolor | blockquote | link imagebrowser | alignleft aligncenter alignright alignjustify | table | searchreplace"
+                                "code | undo redo | style-h2 style-h3 | syntaxhighlighter | bold italic underline strikethrough | bullist numlist | forecolor | blockquote | link imagebrowser media | alignleft aligncenter alignright alignjustify | table | searchreplace"
                             ],
                             imagebrowser: {
                                 root: "<?php $site->sbyaz('anadizin')?>inc/images/kullanici/",
