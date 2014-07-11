@@ -1,0 +1,41 @@
+.sol-menu-menu-wrapper {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: #222;
+    z-index: 9999;
+    transition: all .2s;
+    color: #ddd;
+    overflow: auto;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    &.aktif {
+        left: 0px !important;
+    }
+}
+
+.sol-menu-body-cover {
+    z-index: 9989;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    &.aktif {
+        width: auto;
+        height: auto;
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+.sol-menu-body-wrapper {
+    transition: all .2s;
+    &.aktif {
+        filter: grayscale(100%);
+        filter: gray;
+    }
+}
