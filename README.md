@@ -29,7 +29,7 @@ Siteniz ile ilgili isim, başlık, ana sayfa başlığı gibi temel bilgileri gi
 Evet, hepsi bu kadar. Artık yönetim panelinize girerek makalelerinizi yazmaya başlayabilirsiniz. Yine de başlamadan önce yönetim panelindeki site ayarları ekranından ayarlarınızı incelemeyi, özellikle sosyal medya adreslerinizi doğru bir şekilde girmeyi ihmal etmemenizi tavsiye ederiz...
 
 ### Diller
-Basit Blog gerek kaynak koduyla gerekse temel yapısı ile yalnızca Türkçe kullanım için tasarlanmıştır.
+Basit Blog gerek kaynak kodu gerekse temel yapısı ile yalnızca Türkçe kullanım için tasarlanmıştır.
 
 ### Kaynaklar
 * [Bootstrap](http://getbootstrap.com/)
