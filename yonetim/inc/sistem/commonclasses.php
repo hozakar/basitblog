@@ -20,6 +20,7 @@ class site {
     public function makale($gelen) {
         if(!$gelen) $gelen = $_REQUEST['url'];
         if(!$gelen) return;
+		$kim = $_SESSION['user']['id'] ? $_SESSION['user']['id'] : 0;
 
         $sql = "
             SELECT
@@ -33,7 +34,7 @@ class site {
                 ON kullanicilar.id = makaleler.kullanici 
             WHERE 
                 url = '$gelen'
-                AND (makaleler.aktif OR makaleler.kullanici = ".$_SESSION['user']['id'].")
+                AND (makaleler.aktif OR makaleler.kullanici = ".$kim.")
                 
         ";
         
