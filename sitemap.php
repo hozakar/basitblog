@@ -7,7 +7,7 @@
     <url>
         <loc><?php echo $site->sb['url'].'/';?></loc>
         <?php
-            $tarih = date('Y-m-d', strtotime(current($db->query("SELECT tarih FROM makaleler WHERE sid = $_SESSION[sid] AND akis AND aktif ORDER BY tarih DESC LIMIT 1"))));
+            $tarih = date('Y-m-d', strtotime(current($db->query("SELECT tarih FROM makaleler WHERE sid = $_SESSION[sid] AND akis AND aktif ORDER BY tarih DESC LIMIT 1")->fetch_row())));
         ?><lastmod><?php echo $tarih;?></lastmod>
         <priority>1</priority>
         <image:image>

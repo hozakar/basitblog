@@ -10,22 +10,26 @@
         <?php
             $makaleler = $db->query("SELECT makaleler.*, CONCAT(foto.id, foto.uzanti) as foto FROM makaleler INNER JOIN foto ON foto.mid = makaleler.id WHERE makaleler.sid = $_SESSION[sid] AND makaleler.aktif GROUP BY makaleler.id ORDER BY makaleler.yapiskan DESC, makaleler.tarih DESC, foto.sira LIMIT 10");
             while($makale = $makaleler->fetch_assoc()) {
+				$url = $site->sb['url'].'/'.$makale['url'].'.html';
+				$tarih = date('D, d M Y', strtotime($makale['tarih']));
         ?>
 
         <item>
             <title><?php echo $makale['baslik'];?></title>
-            <link><?php echo $site->sb['url'].'/'.$makale['url'].'.html';?></link>
+            <link><?php echo $url;?></link>
             <description>
                 <![CDATA[
-                <img src="<?php echo $site->sb['url'].'/upload/foto/normal/'.$makale['foto'];?>"/><br>
-                <?php echo htmlspecialchars(strip_tags($makale['aciklama']));?><br>
-                <?php echo htmlspecialchars(strip_tags($makale['icerik']));?><br>
-                <a href="<?php echo $site->sb['url'].'/'.$makale['url'].'.html';?>">Tümü &raquo;</a>
+                <img src="<?php echo $site->sb['url'].'/upload/foto/normal/'.$makale['foto'];?>"/><br><br>
+                <?php echo htmlspecialchars(strip_tags($makale['aciklama']));?><br><br>
+                <?php
+					$makale = explode(' ', strip_tags($makale['icerik']), 26);
+					array_pop($makale);
+					echo implode(' ', $makale)."...";
+				?><br>
+                <a href="<?php echo $url;?>">Tümü &raquo;</a>
                 ]]>            
             </description>
-            <?php
-                $tarih = date('D, d M Y', strtotime($makale['tarih']));
-            ?><pubDate><?php echo $tarih;?></pubDate>
+            <pubDate><?php echo $tarih;?></pubDate>
         </item>
         <?php
             }
