@@ -390,13 +390,14 @@ class site {
             LEFT JOIN 
                 etiketgruplari ON etiketgruplari.mid = makaleler.id 
             LEFT JOIN 
-                etiketler as renksec ON renksec.id = etiketgruplari.eid AND renksec.menu
+                etiketler as renksec ON renksec.id = etiketgruplari.eid
             LEFT JOIN
                 foto ON foto.mid = makaleler.id
             WHERE 
                 makaleler.aktif
                 AND makaleler.sid = $_SESSION[sid]
                 AND makaleler.id <> ".$this->url['id']."
+				AND renksec.menu
             GROUP BY makaleler.id
             ORDER BY makaleler.tarih DESC, foto.sira
             LIMIT 0, $sayi
