@@ -3,9 +3,12 @@
     if($_POST) {
         $kullanici = $db->query("SELECT * FROM kullanicilar WHERE eposta = '$_POST[eposta]' AND sifre = '".md5($_POST['sifre'])."' AND aktif");
         if($kullanici->num_rows > 0) {
-            $_SESSION['user'] = $kullanici->fetch_assoc();
-            header('location: '.$sb['anadizin'].'yonetim/');
-            return;
+			$kullaniciDummy = $kullanici->fetch_assoc();
+            if($_POST['eposta'] == $kullaniciDummy['eposta']) {
+				$_SESSION['user'] = $kullaniciDummy;
+				header('location: '.$sb['anadizin'].'yonetim/');
+				return;
+			}
         }
     }
     $_SESSION['user'] = NULL;
