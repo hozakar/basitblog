@@ -1,4 +1,5 @@
 <?php
+    if(!$_SESSION['user']['id']) return;
     $returndummy = TRUE;
     if(!$_SESSION['user']['duzey']) {
         return;

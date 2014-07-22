@@ -1,4 +1,6 @@
 <?php
+    if(!$_SESSION['user']['id']) return;
+
     $_SESSION['atab'] = $_POST['atab'];
     switch ($_POST['islem']) {
         case 'sil':

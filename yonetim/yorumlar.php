@@ -1,4 +1,5 @@
 <?php
+    if(!$_SESSION['user']['id']) return;
     $makale = '';
     if($_GET['sayfa'] == 'makale') {
         $makale = "makaleler.id = $id AND";

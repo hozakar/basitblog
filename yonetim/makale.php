@@ -1,4 +1,5 @@
 <?php
+    if(!$_SESSION['user']['id']) return;
     $id = max(0, $_GET['id']);
     $makale = $db->query("SELECT * FROM makaleler WHERE kullanici = ".$_SESSION['user']['id']." AND id = ".$id)->fetch_assoc();
 ?>

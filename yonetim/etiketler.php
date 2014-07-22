@@ -1,5 +1,5 @@
 <?php
-    //if(!$_SESSION['user']['duzey']) return;
+    if(!$_SESSION['user']['id']) return;
 ?>
 <div class="container etiketler">
     <div class="row">

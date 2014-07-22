@@ -1,3 +1,4 @@
+<?php   if(!$_SESSION['user']['id']) return;?>
 <div class="container makaleler">
     <div class="row">
         <div class="col-xs-12">

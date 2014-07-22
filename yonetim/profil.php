@@ -1,3 +1,4 @@
+<?php   if(!$_SESSION['user']['id']) return;?>
 <form class="container form-horizontal" role="form" method="post">
     <input type="hidden" name="id" value="<?php echo $_SESSION['user']['id']?>" />
     <div class="row">

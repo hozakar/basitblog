@@ -1,4 +1,5 @@
 <?php
+    if(!$_SESSION['user']['id']) return;
     switch ($_POST['islem']) {
         case 'degistir':
             

@@ -1,4 +1,5 @@
 <?php
+    if(!$_SESSION['user']['id']) return;
     if($_POST['id']) {
         $siteurl = $_POST['url'];
         if(substr($siteurl, -1) == '/') $siteurl = substr($siteurl, 0, strlen($siteurl) - 1);
