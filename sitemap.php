@@ -20,7 +20,7 @@
     ?>
 
     <url>
-        <loc><?php echo $site->sb['url'].'/'.$etiket['isim'].'.html';?></loc>
+        <loc><?php echo $site->sb['url'].'/etiket/'.$etiket['isim'];?></loc>
         <?php
             $tarih = date('Y-m-d', strtotime($etiket['tarih']));
         ?><lastmod><?php echo $tarih;?></lastmod>

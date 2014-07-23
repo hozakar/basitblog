@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include(getDir().'config.php');
 include(getDir().'commonclasses.php');
 $site = new site;
@@ -35,14 +35,10 @@ function seo($s, $id){
     ** Neden bilmiyorum, regex'ten hiç hazzetmiyorum... **
     ** ************************************************ */
 
-    /* URL satırında Türkçe karakter olmaz diye tutturanlar aşağıdaki kısmı aktive edebilir... */
-    /*
     $tr = array('ş','Ş','ı','İ','ğ','Ğ','ü','Ü','ö','Ö','ç','Ç');
-    // Türkçe karakterlerin çevirlecegi karakterler
     $en = array('s','s','i','i','g','g','u','u','o','o','c','c');
     $s = str_replace($tr,$en,$s);
     $s = strtolower($s);
-    */
 
     $s = charReplace($s);
     $s = lCase($s);
