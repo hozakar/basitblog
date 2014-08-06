@@ -23,8 +23,8 @@ function getDir($dosya = 'functions.php') {
 	** document_root bilgisini ayrıca ayıklamak gerekebilir
 	** Teşekkürler isimtescil
 	*/
-	$h = str_replace('\\', '/', $h);
-	$dr =  str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
+	$h = mb_strtolower(str_replace('\\', '/', $h, "UTF-8");
+	$dr =  mb_strtolower(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), "UTF-8");
 	$h = $dr.end(explode($dr, $h));
 
 	return $h;
