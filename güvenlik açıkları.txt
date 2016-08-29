@@ -1,0 +1,9 @@
+Merhabalar,
+
+Aşağıdaki blog yazısında scriptteki zafiyetleri inceledim.
+
+http://xploithub.blogspot.com.tr/2016/08/basitblog-guvenlik-testi.html
+
+Umarım en kısa sürede kapatırsınız.
+
+İyi çalışmalar. 
