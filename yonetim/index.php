@@ -78,7 +78,7 @@
                     <form class="form">
                         <input type="hidden" name="sayfa" value="arama" />
                         <div class="input-group">
-                            <input type="text" class="form-control input-sm" name="hizliara" placeholder="Ara..." value="<?php echo $_GET['hizliara'];?>" />
+                            <input type="text" class="form-control input-sm" name="hizliara" placeholder="Ara..." value="<?php echo htmlspecialchars(strip_tags($_GET['hizliara'])); ?>" />
                             <span class="input-group-addon"><button><i class="fa fa-search"></i></button></span>
                         </div>
                     </form>

@@ -16,10 +16,10 @@
         if($mid) {
             $db->query("INSERT INTO yorumlar (mid, yorum, isim, eposta, web) VALUES(
                 $mid,
-                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['yorum'])))."',
-                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['isim'])))."',
-                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['eposta'])))."',
-                '".sql_filtre(htmlspecialchars(s_addslashes($_POST['web'])))."'
+                '".$db->real_escape_string(sql_filtre(htmlspecialchars(s_addslashes($_POST['yorum']))))."',
+                '".$db->real_escape_string(sql_filtre(htmlspecialchars(s_addslashes($_POST['isim']))))."',
+                '".$db->real_escape_string(sql_filtre(htmlspecialchars(s_addslashes($_POST['eposta']))))."',
+                '".$db->real_escape_string(sql_filtre(htmlspecialchars(s_addslashes($_POST['web']))))."'
             )");
         }
         header('location: '.$site->sb['anadizin'].$_REQUEST['url'].'.html');
@@ -40,11 +40,11 @@
 		$log_sayfa = 'anasayfa';
 		if($_GET['ara']) {
 			$log_sayfa = 'arama';
-			$log_terim = $_GET['ara'];
+			$log_terim = $db->real_escape_string(strip_tags($_GET['ara']));
 		}
 		if($_GET['etiket']) {
 			$log_sayfa = 'etiket';
-			$log_terim = $_GET['etiket'];
+			$log_terim = $db->real_escape_string(strip_tags($_GET['etiket']));
 		}
 		$log_mid = $site->url['id'];
 		if($log_mid) {

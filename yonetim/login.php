@@ -1,7 +1,7 @@
 <?php
     include("inc/sistem/functions.php");
     if($_POST) {
-        $kullanici = $db->query("SELECT * FROM kullanicilar WHERE eposta = '$_POST[eposta]' AND sifre = '".md5($_POST['sifre'])."' AND aktif");
+        $kullanici = $db->query("SELECT * FROM kullanicilar WHERE eposta = '" . $db->real_escape_string(filter_var($_POST['eposta'], FILTER_VALIDATE_EMAIL)) . "' AND sifre = '".md5($_POST['sifre'])."' AND aktif");
         if($kullanici->num_rows > 0) {
 			$kullaniciDummy = $kullanici->fetch_assoc();
             if($_POST['eposta'] == $kullaniciDummy['eposta']) {
@@ -52,7 +52,7 @@
                         <div class="col-xs-12">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-                                <input type="text" class="form-control" name="eposta" placeholder="E-Posta" value="<?php echo $_POST['eposta']?>" />
+                                <input type="text" class="form-control" name="eposta" placeholder="E-Posta" value="<?php echo filter_var($_POST['eposta'], FILTER_VALIDATE_EMAIL); ?>" />
                             </div>
                         </div>
                     </div>

@@ -169,7 +169,7 @@ class site {
             LEFT JOIN 
                 etiketler as renksec ON renksec.id = etiketgruplari.eid AND renksec.menu
         ";
-        $ara = $tip != 'tum' ? '%'.implode('%', explode(' ', $_REQUEST[$tip])).'%' : '';
+        $ara = $tip != 'tum' ? '%'.implode('%', explode(' ', $this->db->real_escape_string($_REQUEST[$tip]))).'%' : '';
         switch($tip) {
             case "etiket": /* etiket */
                 $sql .= "

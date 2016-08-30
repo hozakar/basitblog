@@ -1,3 +1,18 @@
+İlgili yazıda bahsedilen açıklar giderildi.
+
+Bunun dışında SQL injectiona karşı bazı fixler uygulandı.
+
+Düzenlenen dosyalar:
+/index.php
+/aramayonlendir.php
+/yonetim/index.php
+/yonetim/login.php
+/yonetim/inc/sistem/comonclasses.php
+
+Teşekkürler.
+
+-------------------------
+
 Merhabalar,
 
 Aşağıdaki blog yazısında scriptteki zafiyetleri inceledim.
