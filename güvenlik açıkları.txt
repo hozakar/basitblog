@@ -13,6 +13,11 @@ Teşekkürler.
 
 -------------------------
 
+Ek not: Kendi yönetim paneline kullanıcı adı ve şifre ile giriş yapıp,
+kendi sitesine xss ya da sql injection yapmak isteyen arkadaşların elini tutmayalım...
+
+-------------------------
+
 Merhabalar,
 
 Aşağıdaki blog yazısında scriptteki zafiyetleri inceledim.
